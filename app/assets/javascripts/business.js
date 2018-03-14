@@ -79,7 +79,7 @@ $(document).ready(function(){
       console.warn(`ERROR(${err.code}): ${err.message}`);
     };
 
-    // navigator.geolocation.getCurrentPosition(success, error, options);
+    navigator.geolocation.getCurrentPosition(success, error, options);
     navigator.geolocation.watchPosition(success, error, options);
     // how many milliseconds is a long press?
     var longpress = 250;
