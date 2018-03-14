@@ -22,7 +22,8 @@
         <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
-          <i class="fa fa-bars"></i>
+          <%= fa_icon "bars" %>
+<!--           <i class="fa fa-bars"></i> -->
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
@@ -163,22 +164,26 @@
     <section class="contact bg-primary" id="contact">
       <div class="container">
         <h2>We
-          <i class="fa fa-heart"></i>
+          <%= fa_icon "heart" %>
+<!--           <i class="fa fa-heart"></i> -->
           new friends!</h2>
         <ul class="list-inline list-social">
           <li class="list-inline-item social-twitter">
             <a href="#">
-              <i class="fa fa-twitter"></i>
+              <%= fa_icon "twitter" %>
+<!--               <i class="fa fa-twitter"></i> -->
             </a>
           </li>
           <li class="list-inline-item social-facebook">
             <a href="#">
-              <i class="fa fa-facebook"></i>
+              <%= fa_icon "facebook" %>
+<!--               <i class="fa fa-facebook"></i> -->
             </a>
           </li>
           <li class="list-inline-item social-google-plus">
             <a href="#">
-              <i class="fa fa-google-plus"></i>
+              <%= fa_icon "google-plus" %>
+<!--               <i class="fa fa-google-plus"></i> -->
             </a>
           </li>
         </ul>
@@ -199,30 +204,6 @@
         </div>
       </div>
     </nav>
-
-    <header class="masthead">
-      <div class="container h-100">
-        <div class="row h-100">
-          <div class="col-lg-7 my-auto">
-            <div class="header-content mx-auto">
-              <h1 class="mb-5">Discover affordable, four and five star rated businesses near you!</h1>
-                <%#= link_to 'Start Now for Free!', root_path, id: 'start-now-for-free-button', class: 'btn btn-lrg' %>
-            </div>
-          </div>
-          <div class="col-lg-5 my-auto">
-            <div class="device-container">
-              <div class="device-mockup iphone6_plus portrait white">
-                <div class="device">
-                  <div class="screen">
-                    <%= image_tag('demo-screen-a.jpg', class: 'img-fluid', id: 'screenshot') %>
-                  </div>
-                </div> 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
 
     <!--     # mobile unicorn -->
     <div id="mobile-form" style="width: 100%; margin-top: 50px;">
