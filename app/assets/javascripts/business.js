@@ -28,19 +28,6 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('body').on( "click", function() { 
-    console.log('click');
-    alert('click');
-  });
-});
-
-$(document).ready(function(){
-  $('#mobile-unicorn-button').mouseover(function() {
-    alert('mouseover');
-  });
-});
-
-$(document).ready(function(){
   $('#mobile-unicorn-button').on( "vmouseover", function() { 
     alert('v fucking mouseover');
   });
@@ -161,77 +148,3 @@ $(document).ready(function(){
     } );
 });
 
-$(document).ready(function(){
-
-    var latitude = null
-    var longitude = null
-
-    var options = {
-      enableHighAccuracy: true,
-      timeout: 5000,
-      maximumAge: 0
-    };
-
-    function success(pos) {
-      var crd = pos.coords;
-
-      console.log('Your current position is:');
-      console.log(`Latitude : ${crd.latitude}`);
-      console.log(`Longitude: ${crd.longitude}`);
-      console.log(`More or less ${crd.accuracy} meters.`);
-      latitude = crd.latitude;
-      longitude = crd.longitude;
-    };
-
-    function error(err) {
-      console.warn(`ERROR(${err.code}): ${err.message}`);
-    };
-
-    navigator.geolocation.getCurrentPosition(success, error, options);
-
-    // how many milliseconds is a long press?
-    var longpress = 250;
-    // holds the start time
-    var start;
-
-    $( "#mobile-unicorn-button" ).on( 'touchstart', function( e ) {
-        start = new Date().getTime();
-    } );
-
-    // $( "#mobile-unicorn-button" ).on( 'mouseleave', function( e ) {
-    //     start = 0;
-    // } );
-
-    $( "#mobile-unicorn-button" ).on( 'touchend', function( e ) {
-        if (latitude) {
-        }  else { 
-          latitude = 'localhost';
-        };
-        if (longitude) {
-        }  else { 
-          longitude = 'localhost';
-        };
-
-        if ( new Date().getTime() >= ( start + longpress )  ) { 
-
-           console.log('long press!');
-           alert('long press! latitude:' + latitude + ' longitude:' + longitude);
-
-           $('#unicorn_search_type').val("long_press");
-           $('#unicorn_latitude').val(latitude);
-           $('#unicorn_longitude').val(longitude);
-           $("#search_form").submit();
-           start = 0;
-        } else {
-
-           console.log('short press!');  
-           alert('short press! latitude:' + latitude + ' longitude:' + longitude);
-
-            $('#unicorn_search_type').val("short_press");
-            $('#unicorn_latitude').val(latitude);
-            $('#unicorn_longitude').val(longitude);
-            $("#search_form").submit();
-            start = 0;
-        }
-    } );
-});

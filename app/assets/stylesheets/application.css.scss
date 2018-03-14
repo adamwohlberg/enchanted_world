@@ -310,7 +310,7 @@ background-color: transparent !important;
 }
 
 @media screen and (max-width: 900px) {
-    #logo-section, .masthead, #download, #features, section.cta, section#contact { 
+    #logo-section, .masthead, #download, #features, section.cta, section#contact, button.navbar-toggler { 
       display: none;
     }
     #mainNav {

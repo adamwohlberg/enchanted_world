@@ -12,6 +12,9 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'high_voltage'
 gem 'pg', '~> 0.18'
 gem "font-awesome-rails"
+gem "figaro"
+gem 'yelp', '~> 2.1', '>= 2.1.1'
+gem 'httparty'
 
 group :development, :test do
   gem 'byebug'

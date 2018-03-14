@@ -14,7 +14,7 @@ class BusinessesController < ApplicationController
   end
 
   def create
-    {"utf8"=>"✓", "authenticity_token"=>"03uGC0A17ITKgYxcEMv2h7IwQ2GHdAOEx7CqYFydnxH8ZCabaYSnvWbEstEAK4NpBc6UNXh61stfQap2dBXBMg==", "business"=>{"search_type"=>"", "latitude"=>"", "longitude"=>"", "category"=>"", "location"=>""}, "commit"=>"Find Businesss"}
+    # {"utf8"=>"✓", "authenticity_token"=>"03uGC0A17ITKgYxcEMv2h7IwQ2GHdAOEx7CqYFydnxH8ZCabaYSnvWbEstEAK4NpBc6UNXh61stfQap2dBXBMg==", "business"=>{"search_type"=>"", "latitude"=>"", "longitude"=>"", "category"=>"", "location"=>""}, "commit"=>"Find Businesss"}
 
     search_type = params["business"]["search_type"] #short_press or #long_press default for testing the button
     search_type = "short_press" if search_type.blank?
@@ -93,9 +93,9 @@ class BusinessesController < ApplicationController
 
 
       if search_type == 'short_press' 
-        redirect_to unicorn_path(search_id: search_id)
+        redirect_to businesses_path(search_id: search_id)
       elsif search_type == 'long_press' #this is the unicorn locator
-        redirect_to unicorn_locator_path(search_id: search_id)
+        redirect_to business_path(search_id: search_id)
       end
     else
       render root_path

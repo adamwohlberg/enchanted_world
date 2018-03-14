@@ -1,6 +1,6 @@
 class CreateBusinesses < ActiveRecord::Migration
   def change
-    create_table "unicorns", force: :cascade do |t|
+    create_table "businesses", force: :cascade do |t|
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false
       t.string "yelp_id"
