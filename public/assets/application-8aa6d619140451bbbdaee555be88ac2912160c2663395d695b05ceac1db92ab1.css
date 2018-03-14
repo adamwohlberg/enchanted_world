@@ -10237,8 +10237,8 @@ header.masthead {
   padding-top: 150px;
   padding-bottom: 100px;
   color: white;
-  background: url("../img/bg-pattern.png"), #7b4397;
-  background: url("../img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
+  background: url("''bg-pattern.png"), #7b4397;
+  background: url("''bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
 }
 
 /* line 162, /Users/adamwohlberg/enchanted_world/app/assets/stylesheets/new-age.scss */
@@ -10390,7 +10390,7 @@ section.features .feature-item i {
 section.cta {
   position: relative;
   padding: 250px 0;
-  background-image: url("../img/bg-cta.jpg");
+  background-image: url("''bg-cta.jpg");
   background-position: center;
   background-size: cover;
 }

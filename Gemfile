@@ -11,6 +11,7 @@ gem 'simple_form'
 gem 'bootstrap', '~> 4.0.0'
 gem 'high_voltage'
 gem 'pg', '~> 0.18'
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'byebug'
