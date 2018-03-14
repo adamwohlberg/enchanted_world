@@ -13,29 +13,7 @@
 
 $(document).ready(function(){
 
-    $(".unicorn").dblclick(function() {
-      $(this).addClass('rotate-left').delay(700).fadeOut(1);
-      $('.unicorn').find('.status').remove();
-
-      $(this).append('<div class="status dislike">NOPE!</div>');      
-      if ( $(this).is(':last-child') ) {
-        $('.unicorn:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
-       } else {
-          $(this).next().removeClass('rotate-left rotate-right').fadeIn(400);
-       }
-    });  
-
-});
-
-$(document).ready(function(){
-  $('#mobile-unicorn-button').on( "vmouseover", function() { 
-    alert('v fucking mouseover');
-  });
-});
-
-$(document).ready(function(){
-
-    $(".unicorn").on( "touchstart", function() { 
+    $(".unicorn").on( "swipeleft swiperight dblclick", function() { 
       $(this).addClass('rotate-left').delay(700).fadeOut(1);
       $('.unicorn').find('.status').remove();
 
@@ -101,8 +79,8 @@ $(document).ready(function(){
       console.warn(`ERROR(${err.code}): ${err.message}`);
     };
 
-    navigator.geolocation.getCurrentPosition(success, error, options);
-
+    // navigator.geolocation.getCurrentPosition(success, error, options);
+    navigator.geolocation.watchPosition(success, error, options);
     // how many milliseconds is a long press?
     var longpress = 250;
     // holds the start time

@@ -35,40 +35,40 @@
 // $(document).ready(function(){
 //   window.navigator.vibrate(200);
 // });
-$(document).ready(function(){
-    var latitude = null
-    var longitude = null
-    var options = {
-      enableHighAccuracy: true,
-      timeout: 5000,
-      maximumAge: 0
-    };
-    function success(pos) {
-      var crd = pos.coords;
-      console.log('Your current position is:');
-      console.log(`Latitude : ${crd.latitude}`);
-      console.log(`Longitude: ${crd.longitude}`);
-      console.log(`More or less ${crd.accuracy} meters.`);
-      var latitude = crd.latitude;
-      var longitude = crd.longitude;
-    };
-    function error(err) {
-      console.warn(`ERROR(${err.code}): ${err.message}`);
-    };
-    setTimeout(function() {
-      navigator.geolocation.getCurrentPosition(success, error, options);
-      if (latitude) {
-      }  else { 
-        latitude = 'localhost';
-      };
-      if (longitude) {
-      }  else { 
-        longitude = 'localhost';
-      };
-      $('#unicorn_search_type').val("long_press");
-      $('#unicorn_latitude').val(latitude);
-      $('#unicorn_longitude').val(longitude);
-      $('#search_form').submit();
-    }, 5000);
-});
+// $(document).ready(function(){
+//     var latitude = null
+//     var longitude = null
+//     var options = {
+//       enableHighAccuracy: true,
+//       timeout: 5000,
+//       maximumAge: 0
+//     };
+//     function success(pos) {
+//       var crd = pos.coords;
+//       console.log('Your current position is:');
+//       console.log(`Latitude : ${crd.latitude}`);
+//       console.log(`Longitude: ${crd.longitude}`);
+//       console.log(`More or less ${crd.accuracy} meters.`);
+//       var latitude = crd.latitude;
+//       var longitude = crd.longitude;
+//     };
+//     function error(err) {
+//       console.warn(`ERROR(${err.code}): ${err.message}`);
+//     };
+//     setTimeout(function() {
+//       navigator.geolocation.getCurrentPosition(success, error, options);
+//       if (latitude) {
+//       }  else { 
+//         latitude = 'localhost';
+//       };
+//       if (longitude) {
+//       }  else { 
+//         longitude = 'localhost';
+//       };
+//       $('#unicorn_search_type').val("long_press");
+//       $('#unicorn_latitude').val(latitude);
+//       $('#unicorn_longitude').val(longitude);
+//       $('#search_form').submit();
+//     }, 5000);
+// });
 </script>
