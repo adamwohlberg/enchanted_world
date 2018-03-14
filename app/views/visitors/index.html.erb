@@ -1,1 +1,192 @@
-<h3>Welcome</h3>
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>New Age - Start Bootstrap Theme</title>
+
+    <! Bootstrap core CSS -->
+<!--     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- Custom fonts for this template -->
+<!--     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet"> -->
+
+    <!-- Plugin CSS -->
+<!--     <link rel="stylesheet" href="device-mockups.min.scss"> -->
+
+    <!-- Custom styles for this template -->
+<!--     <link href="new-age.min.css" rel="stylesheet">  -->
+<!-- 
+  </head>
+ -->
+<!--   <body id="page-top"> -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <h1 id="logo-name">Enchanted World™ <span style="font-size: 16px; color:white;">Powered by</span><%= image_tag('Yelp_trademark_RGB_outline.png', id: 'yelp-logo') %></h1>
+        </a>
+<!--         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button> -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-lg-7 my-auto">
+            <div class="header-content mx-auto">
+              <h1 class="mb-5">Discover affordable, four and five star rated businesses near you!</h1>
+                <%#= link_to 'Start Now for Free!', root_path, id: 'start-now-for-free-button', class: 'btn btn-lrg' %>
+            </div>
+          </div>
+          <div class="col-lg-5 my-auto">
+            <div class="device-container">
+              <div class="device-mockup iphone6_plus portrait white">
+                <div class="device">
+                  <div class="screen">
+                    <%= image_tag('demo-screen-a.jpg', class: 'img-fluid', id: 'screenshot') %>
+                  </div>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--     # mobile unicorn -->
+    <div id="mobile-form" style="width: 100%; margin-top: 50px;">
+      <h4 id="tap-to-find-unicorns" style="color: white; width: 99%; position: relative;">Tap to find a unicorn</h4><br>
+      <h4 id="long-tap-to-find-unicorns" style="color: white; width: 99%; position: relative;">Long tap to <br>turn on unicorn finder</h4><br>
+      <%= image_tag('unicorn-example.png', id: 'mobile-unicorn-button', class: 'hoverReveal pulse-button') %>
+    <form id="cell-number-input">
+      <p style="font-size: 14px; color: white;">we'll text you here when a unicorn is nearby:</p>
+      <input style="margin-top: -30px; width: 300px;" type="tel" name="usrtel" placeholder="310.555.1212">
+    </form>
+<!--     <div id="adsense-container">Google Ad here
+    </div> -->
+    </div>
+
+<!--    #the form -->
+  <div class="row">
+    <div class="col col-lg-12">
+      <div style="margin-top: 30px; width: 80%; margin-left: 15%; padding-left:5px;">
+      <%= simple_form_for :business, :url => businesses_path, :method => :post, html: { id: :search_form } do |f| %>
+        <%= f.hidden_field :search_type, label: false, placeholder: 'xyz' %>
+        <%= f.hidden_field :latitude, label: false, placeholder: 'xyz' %>
+        <%= f.hidden_field :longitude, label: false, placeholder: 'xyz' %>        
+        <%= f.hidden_field :category, label: false, placeholder: 'Find: Restaurants' %>
+        <%= f.hidden_field :location, label: false, placeholder: 'Near: Current Location'%> 
+        <%= f.button :submit, 'Find Unicorns', class: "btn btn-lrg btn-success", :style => "display: none;" %>
+      <% end %><br>
+      </div>
+    </div>
+  </div>
+
+<!--     <section class="download bg-primary text-center" id="download" style="margin-top: -55px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <h2 class="section-heading">Discover unicorns near you!</h2>
+            <p>Transform any city into an enchanted world with magic around every corner. Discover our progressive web app is available on any device!</p>
+            <div class="badges">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-heading text-center">
+          <h2>What is a Unicorn?</h2>
+          <p class="text-muted"><p>A unicorn is a nearby business with a high quality rating (either 4 or 5 stars on Yelp&reg;) and a low price (either a $ or $$ price rating on Yelp&reg;) - it's as simple as that!</P>
+          <p class="text-muted">No need for complex searches. One click and you know you've discovered a unicorn!</P>
+          <hr>
+        </div>
+        <div id="grid-container" style='margin-top: -85px; height: 300px;'>
+        <div class="row main-grid">
+           <div class="col col-lg-2">
+              <div class="starRatings"> 
+                <%= image_tag('yelp_stars/android/drawable-hdpi/large/stars_large_5.png') %>
+                <%= image_tag('yelp_stars/android/drawable-hdpi/large/stars_large_4.png') %>
+                <%= image_tag('yelp_stars/android/drawable-hdpi/large/stars_large_3.png') %>
+                <%= image_tag('yelp_stars/android/drawable-hdpi/large/stars_large_2.png') %>
+                <%= image_tag('yelp_stars/android/drawable-hdpi/large/stars_large_1.png') %>
+             </div>
+           </div>
+           <div class="col col-lg-5 category" id="unicorn">
+            <%= image_tag('unicorn-example.png') %>
+            <span>Unicorns Live Here</span><br>
+            <span>low price / high quality</span>
+          </div>
+           <div class="col col-lg-5 category" id="luxury">
+            <%= image_tag('diamond-example.png') %>
+            <span>high price / high quality</span>
+          </div>
+        </div>
+        <div class="row">
+           <div class="col col-lg-2"></div>
+           <div class="col col-lg-5 category" id="cheapo">
+            <%= image_tag('cheapo-example.png') %>
+            <span>low price / low quality</span>
+          </div>
+           <div class="col col-lg-5 category" id="poop">
+            <%= image_tag('poop-example.png') %>
+            <span>high price / low quality</span>
+          </div>
+        </div>
+        <div class="row" id="dollars-grid-container">
+           <div class="col col-lg-2"></div>
+           <div class="col col-lg-10">
+            <div class="dollarRating">
+                 <div id="fourDollars"><span>$$$$</span></div>
+                 <div id="threeDollars"><span>$$$</span></div>
+                 <div id="twoDollars"><span>$$</span></div>
+                 <div id="oneDollar"><span>$</span></div>
+             </div>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        </div>
+      </div>
+    </section> 
+
+    <footer>
+      <div class="container">
+        <p>&copy; Your Website 2018. All Rights Reserved.</p>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="#">Privacy</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Terms</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

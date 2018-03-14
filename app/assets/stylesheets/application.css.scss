@@ -13,3 +13,481 @@
  *= require_tree .
  *= require_self
  */
+
+
+#listings {
+ margin-top: -84px;
+}
+#screenshot {
+  width: 500px;
+  height: 720px;
+}
+.starRatings img {
+  margin-bottom: 26px;
+  opacity: 1.0;
+}
+.starRatings img:hover {
+  opacity: 0.5;
+}
+header {
+  margin-top: 90px;
+}
+#mainNav {
+  background-color: purple;
+}
+form#search_form {
+  border: none;
+  display: none;
+}
+.unicorn {
+  padding: 30px 0px 0px 10px;
+  width: 100%; 
+  height: 798px; 
+  margin: -87px 0px 0px -20px; 
+  // cursor: pointer;
+  display: block;
+  margin-top: -23px !important;
+  border: 10px solid blue;
+  border-radius: 20px;
+}
+.unicorn:first-child {
+  margin-top: 0px !important;
+}
+#start-now-for-free-button {
+  background-color: grey;
+  color: white;
+}
+.swipe {
+  display: none;
+}
+#grid-container {
+  margin-left: -70px;
+}
+#google-adsense-ad-container {
+  width:110%;
+  height: 200px;
+  display: block;
+  margin-top: 30px;
+  margin-left: -30px;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  overflow: visible;
+  text-align: center;
+}
+#logo-name {
+  font-weight: 800;
+  font-size: 50px; 
+  margin-top: 25px;
+}
+.hidden {
+  visibility: hidden;
+}
+.shown {
+  visibility: visible;
+}
+
+#cell-number-input {
+  margin-top: 30px;
+  border-radius: 10px;
+  font-size: 30px;
+  line-height: 30px;
+  padding: 10px;
+  text-align:center;
+  visibility: hidden;
+}
+
+#long-tap-to-find-unicorns {
+  // visibility: hidden;
+  display: none;
+  margin-top: -27px;
+}
+.pulse-button {
+
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: none;
+  box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+  border-radius: 50%;
+  background-color: #e84c3d;
+  // background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/173024/jonathanlarradet_copy.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  // cursor: pointer;
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+.pulse-button:hover 
+{
+  -webkit-animation: none;-moz-animation: none;-ms-animation: none;animation: none;
+}
+
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+
+#mobile-form {
+      text-align: center;
+}
+#mobile-unicorn-button {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid pink;
+  padding: 20px;
+}
+#mobile-unicorn-button:hover {
+  transition: all .2s ease-in-out; 
+  transform: scale(1.1);
+}
+#logo-unicorn {
+  width: 90px;
+  height: 90px;
+}
+#unicorn {
+  background-color: pink;
+  border: 4px solid purple;
+}
+#luxury, #cheapo, #poop {
+  opacity: 0.3;
+}
+.category img {
+  width: 85px;
+  height: 85px;
+  text-align: center;
+}
+.category {
+  padding-top: 30px;
+  text-align: center;
+}
+.yelp-image-small {
+  width: 240px;
+  height: 240px;
+  border: 2px solid black;
+  text-align: center;
+  display: block;
+  position: relative;
+}
+#yelp-logo {
+  width: 100px;
+  // margin-top: -100px;
+  // margin-left: 78px;
+}
+.starRating {
+   -webkit-transform: rotate(270deg) scale(2.8);
+    -moz-transform: rotate(270deg) scale(2.8);
+    -o-transform: rotate(270deg) scale(2.8);
+    -ms-transform: rotate(270deg) scale(2.8);
+    transform: rotate(270deg) scale(2.8);
+    margin-top: 110px;
+    margin-left: 65px;
+}
+#dollars-grid-container {
+background-color: transparent !important;
+}
+
+.dollarRating {
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: space-around;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    font-weight: 800;
+    width: 40%;
+    margin-left: 250px;
+    z-index: 2;
+    height: 89%;
+    position: absolute;
+    color: #000;
+    // border: 5px solid red;
+}
+
+#fourDollars, #threeDollars, #twoDollars, #oneDollar {
+/*  padding: 13% 0px;*/
+/*    border: 2px solid green;*/
+    position: relative;
+    width: 100%;
+    margin: 0px 50% 0px 0px;
+    text-align: right;
+    font-size: 30px;
+/*    border: 2px solid black;*/
+}
+#oneDollar {
+  margin-left: 300px;
+}
+.dollarRating > div:hover,
+.dollarRating > div:hover ~ div {
+  color: #008000;
+}
+.dollarhover {
+  color: #008000;
+}
+
+.selected {
+  background-color: yellow !important;
+}
+.deselected {
+  background-color: black !important;
+}
+
+.dollar-sign {
+  font-size: 33px;
+  color: green;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-left: 130px;
+}
+// .dollar-icon {
+//   font-size: 33px;
+//   color: green;
+//   font-weight: 700;
+//   letter-spacing: 3px;
+//   float: right;
+// }
+.main-grid .row {
+  // border: 1px solid black;
+  // background: lightgrey; 
+  height: 150px;
+}
+.main-grid .col {
+  // border: 1px dashed black;
+  // background: lightgrey; 
+  height:  150px;
+  padding-top: 30px;
+  text-align: center;
+  display: block;
+}
+// .main-grid .col:hover {
+//   // background: white; 
+// }
+
+.category {
+  border: 1px solid black;
+  height:  150px;
+  background: lightgrey; 
+}
+// .starRating {
+//   display: -webkit-flex;
+//   -webkit-flex-direction: row;
+//   -webkit-justify-content: space-between;
+// /*  border: 5px solid red;*/
+//     unicode-bidi: bidi-override;
+//     direction: rtl;
+//     height: 30%;
+//     width: 80%;
+//     position: relative;
+//   z-index: 5;
+//   margin: -3.5% 2% 0px 0px;
+//   padding: 0px 0px 0px 0px;
+//   float: right;
+//   color: white;
+//   font-size: 2.0em;
+//     text-shadow: 5px 5px 5px #ccc;
+// /*    overflow: hidden;*/
+//     /*border: 4px solid blue;*/
+// }
+// .star:hover {
+//   color: yellow;  
+// }
+// // .starRating > span:hover,
+// .starRating > span:hover ~ span {
+//   color: yellow;
+// }
+/*added this as an addClass for jQuery separate from the .star:hover*/
+// .starhover {
+//   color: yellow;
+// }
+
+#body-gradient {
+  background: linear-gradient(to bottom, #3366ff 0%, #99ccff 100%);
+  border: 1px solid #3366ff; //this covers bottom section 
+}
+
+@media screen and (max-width: 900px) {
+    #logo-section, .masthead, #download, #features {
+      display: none;
+    }
+    #mainNav {
+      visibility: hidden;
+    }
+    body {
+      background: linear-gradient(to bottom, #3366ff 0%, #99ccff 100%);
+      border: 1px solid #3366ff; //this covers bottom section 
+    }
+    footer {
+      display: none;
+    }
+    #mobile-form {
+      display: block;
+    }
+    a {
+      color: white;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #mobile-form {
+      display: none;
+    }
+}
+
+#adsense-container {
+  width: 100%;
+  border: 10px solid pink;
+  height: 20px;
+}
+
+.rotate-left {
+ border: 8px solid grey !important;
+ border-radius: 30px !important;
+/* transform: rotate(-360deg) scale(1.0) !important;*/
+ -webkit-animation: rock-developer-left 1.5s ease-in-out;
+}
+.rotate-left:hover, {
+ border: 8px solid steelblue !important;
+}
+.rotate-right:hover, {
+ border: 8px solid green !important;
+}
+.rotate-right {
+ border: 8px solid green !important;
+ border-radius: 30px !important;
+ transform: rotate(360deg) scale(1.0) !important;
+ -webkit-animation: rock-developer-right 1.5s ease-in-out;
+}
+.rotate-none {
+  transform: rotate(0deg) scale (1.0) !important;
+}
+
+/* Developer Keyframes
+-------------------------------------------- */
+@-webkit-keyframes rock-developer-left {
+  0%     { -webkit-transform: rotate(0) translateY(0);}
+    20%    { -webkit-transform: rotate(-3deg) translateY(0px);}
+    40%    { -webkit-transform: rotate(3deg) translateY(0px);}
+    60%    { -webkit-transform: rotate(-1.5deg) translateY(0px);}   
+    80%    { -webkit-transform: rotate(1.5deg) translateY(0px);}
+  100%   { -webkit-transform: rotate(0) translateY(0);}
+}
+
+@-webkit-keyframes rock-developer-right {
+  0%     { -webkit-transform: rotate(0) translateY(0);}
+    20%    { -webkit-transform: rotate(3deg) translateY(0px);}
+    40%    { -webkit-transform: rotate(-3deg) translateY(0px);}
+    60%    { -webkit-transform: rotate(1.5deg) translateY(0px);}   
+    80%    { -webkit-transform: rotate(-1.5deg) translateY(0px);}
+  100%   { -webkit-transform: rotate(0) translateY(0);}
+}
+
+.like {
+  border-radius: 5px;
+  padding: 15px 15px;
+  border: 2px solid green;
+  color: green;
+  text-transform: uppercase;
+  font-size: 4em;
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  text-shadow: none;
+}
+.dislike {
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 2px solid red;
+  color: red;
+  text-transform: uppercase;
+  font-size: 4em;
+  position: absolute;
+  top: 120px;
+  left: 70px;
+  text-shadow: none;
+}
+
+ /* GENERAL STYLE */
+
+.device-mockup {
+  position: relative;
+  width: 100%;
+  padding-bottom: 61.775701%;
+}
+
+  .device-mockup > .device {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    width: 100%; height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: image-url("iphone_6_plus_black_port.png");
+  }
+
+    .device-mockup > .device > .screen {
+      position: absolute;
+      top:    11.0438729%;
+      bottom: 14.6747352%;
+      left:   13.364486%;
+      right:  13.364486%;
+      overflow: hidden;
+    }
+
+
+/* DEVICES */
+
+/* iPhone 6 Plus*/
+.device-mockup {
+  padding-bottom: 201.76%;
+}
+
+.device-mockup[data-device="iphone6_plus"] > .device,
+.device-mockup[data-device="iphone6_plus"][data-color="black"] > .device,
+.device-mockup[data-device="iphone6_plus"][data-orientation="portrait"][data-color="black"] > .device {
+  background-image: image-url("iphone_6_plus_black_port.png");
+}
+
+.device-mockup[data-device="iphone6_plus"][data-orientation="landscape"] > .device,
+.device-mockup[data-device="iphone6_plus"][data-orientation="landscape"][data-color="black"] > .device {
+  background-image: image-url("iphone_6_plus_black_land.png");
+}
+
+.device-mockup[data-device="iphone6_plus"][data-color="white"] > .device,
+.device-mockup[data-device="iphone6_plus"][data-orientation="portrait"][data-color="white"] > .device {
+  background-image: image-url("iphone_6_plus_white_port.png");
+}
+
+.device-mockup[data-device="iphone6_plus"][data-orientation="landscape"][data-color="white"] > .device {
+  background-image: image-url("iphone_6_plus_white_land.png");
+}
+
+.device-mockup[data-device="iphone6_plus"][data-color="gold"] > .device,
+.device-mockup[data-device="iphone6_plus"][data-orientation="portrait"][data-color="gold"] > .device {
+  background-image: image-url("iphone_6_plus_gold_port.png");
+}
+
+.device-mockup[data-device="iphone6_plus"][data-orientation="landscape"][data-color="gold"] > .device {
+  background-image: image-url("iphone_6_plus_gold_land.png");
+}
+
+.device-mockup[data-device="iphone6_plus"] > .device > .screen,
+.device-mockup[data-device="iphone6_plus"][data-orientation="portrait"] > .device > .screen {
+    top: 11.58%; bottom: 11.58%; left: 5.97%; right: 5.97%;
+}
+
+.device-mockup[data-device="iphone6_plus"][data-orientation="landscape"] > .device > .screen {
+    top: 5.97%; bottom: 5.97%; left: 11.38%; right: 11.58%;
+}
+
+.device-mockup[data-device="iphone6_plus"] > .device > .button,
+.device-mockup[data-device="iphone6_plus"][data-orientation="portrait"] > .device > .button {
+  display: block;
+    top: 89.9%; bottom: 3.2%; left: 43%; right: 43%;
+}
+
+.device-mockup[data-device="iphone6_plus"][data-orientation="landscape"] > .device > .button {
+  display: block;
+  top: 43%; bottom: 43%; left: 89.9%; right: 3.2%;
+}

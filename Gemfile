@@ -7,14 +7,17 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'simple_form'
+gem 'bootstrap', '~> 4.0.0'
+gem 'high_voltage'
+gem 'pg', '~> 0.18'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-gem 'bootstrap', '~> 4.0.0'
-gem 'high_voltage'
-gem 'pg', '~> 0.18'
+
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'

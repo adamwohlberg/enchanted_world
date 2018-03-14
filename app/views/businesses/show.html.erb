@@ -1,0 +1,74 @@
+<div id="listings">
+  <ol>
+      <% if @unicorn.present? %>
+        <div class="unicorn">
+          <%= image_tag(@unicorn["image_url"], class: 'yelp-image-small') %> 
+          <div style="text-align:center; margin-top: 15px;">
+             <strong style="font-size: 16px; padding-left: 14px;"><%= link_to(@unicorn["name"], @unicorn["yelp_url"]) %></strong><br>
+          </div>
+        <div id="google-adsense-ad-container">
+          <%#= link_to image_tag('ad-example1.png'), 'http://www.123rf.com' %>
+        </div>
+        </div><br>
+      <% end %>
+  </ol>
+</div>
+
+<!--    #the form -->
+  <div class="row">
+    <div class="col col-lg-12">
+      <div style="margin-top: 30px; width: 80%; margin-left: 15%; padding-left:5px;">
+      <%= simple_form_for :business, :url => businesses_path, :method => :post, html: { id: :search_form } do |f| %>
+        <%= f.hidden_field :search_type, label: false, placeholder: 'xyz' %>
+        <%= f.hidden_field :latitude, label: false, placeholder: 'xyz' %>
+        <%= f.hidden_field :longitude, label: false, placeholder: 'xyz' %>        
+        <%= f.hidden_field :category, label: false, placeholder: 'Find: Restaurants' %>
+        <%= f.hidden_field :location, label: false, placeholder: 'Near: Current Location'%> 
+        <%= f.button :submit, 'Find Unicorns', class: "btn btn-lrg btn-success", :style => "display: none;" %>
+      <% end %><br>
+      </div>
+    </div>
+  </div>
+
+
+<script>
+// $(document).ready(function(){
+//   window.navigator.vibrate(200);
+// });
+$(document).ready(function(){
+    var latitude = null
+    var longitude = null
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+    function success(pos) {
+      var crd = pos.coords;
+      console.log('Your current position is:');
+      console.log(`Latitude : ${crd.latitude}`);
+      console.log(`Longitude: ${crd.longitude}`);
+      console.log(`More or less ${crd.accuracy} meters.`);
+      var latitude = crd.latitude;
+      var longitude = crd.longitude;
+    };
+    function error(err) {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    };
+    setTimeout(function() {
+      navigator.geolocation.getCurrentPosition(success, error, options);
+      if (latitude) {
+      }  else { 
+        latitude = 'localhost';
+      };
+      if (longitude) {
+      }  else { 
+        longitude = 'localhost';
+      };
+      $('#unicorn_search_type').val("long_press");
+      $('#unicorn_latitude').val(latitude);
+      $('#unicorn_longitude').val(longitude);
+      $('#search_form').submit();
+    }, 5000);
+});
+</script>
