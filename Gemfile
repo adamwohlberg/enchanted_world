@@ -15,6 +15,7 @@ gem "font-awesome-rails"
 gem "figaro"
 gem 'yelp', '~> 2.1', '>= 2.1.1'
 gem 'httparty'
+gem 'geocoder'
 
 group :development, :test do
   gem 'byebug'
