@@ -124,23 +124,19 @@ $(document).ready(function(){
           longitude = 'localhost';
         };
 
-        if ( new Date().getTime() >= ( start + longpress )  ) { 
-
+        if ( new Date().getTime() >= ( start + longpress ) ){
            console.log('long press!');
            alert('long press! latitude:' + latitude + ' longitude:' + longitude);
-
-           $('#unicorn_search_type').val("long_press");
-           $('#unicorn_latitude').val(latitude);
-           $('#unicorn_longitude').val(longitude);
+           $('#business_search_type').val("long_press");
+           $('#business_latitude').val(latitude);
+           $('#business_longitude').val(longitude);
            $("#search_form").submit();
         } else {
-
            console.log('short press!');  
            alert('short press! latitude:' + latitude + ' longitude:' + longitude);
-
-            $('#unicorn_search_type').val("short_press");
-            $('#unicorn_latitude').val(latitude);
-            $('#unicorn_longitude').val(longitude);
+            $('#business_search_type').val("short_press");
+            $('#business_latitude').val(latitude);
+            $('#business_longitude').val(longitude);
             $("#search_form").submit();
         }
     } );

@@ -10,12 +10,11 @@ class BusinessesController < ApplicationController
   end
 
   def show
-    @unicorn = Business.where(search_id: params["search_id"]).order('distance ASC').first
+    @unicorn = Business.where(search_id: params["id"]).order('distance ASC').first
   end
 
   def create
     # {"utf8"=>"✓", "authenticity_token"=>"03uGC0A17ITKgYxcEMv2h7IwQ2GHdAOEx7CqYFydnxH8ZCabaYSnvWbEstEAK4NpBc6UNXh61stfQap2dBXBMg==", "business"=>{"search_type"=>"", "latitude"=>"", "longitude"=>"", "category"=>"", "location"=>""}, "commit"=>"Find Businesss"}
-
     search_type = params["business"]["search_type"] #short_press or #long_press default for testing the button
     search_type = "short_press" if search_type.blank?
     
@@ -40,42 +39,42 @@ class BusinessesController < ApplicationController
 
     begin 
       @api_key = ENV['YELP_API_KEY']
-        @results = HTTParty.get("https://api.yelp.com/v3/businesses/search?term=#{term}&latitude=#{latitude}&longitude=#{longitude}", 
-          headers: {
-            "Authorization" => "Bearer #{@api_key}", 
-            "Content-Type" =>  "application/json"
-          }
-        )
+      response = HTTParty.get("https://api.yelp.com/v3/businesses/search?term=#{term}&latitude=#{latitude}&longitude=#{longitude}", 
+        headers: {
+          "Authorization" => "Bearer #{@api_key}", 
+          "Content-Type" =>  "application/json"
+        }
+      )
     rescue
     end
 
-    @businesses =  @results.first.second
+    businesses = response.parsed_response['businesses']
 
-    @poop = []
-    @luxury = []
-    @cheapo = []
-    @unicorns = []
+    poop = []
+    luxury = []
+    cheapo = []
+    unicorns = []
 
     one_or_two_dollars = ['$','$$']
     three_or_four_dollars = ['$$$','$$$$']
 
-    @businesses.each do |business|
+    businesses.each do |business|
       # business is a hash
       case
       when one_or_two_dollars.include?(business["price"]) && ( business["rating"] >= 4 )
-        @unicorns << business
+        unicorns << business
       when one_or_two_dollars.include?(business["price"]) && ( business["rating"] < 3 )
-        @cheapo << business
+        cheapo << business
       when three_or_four_dollars.include?(business["price"]) && ( business["rating"] >= 4 )
-        @luxury << business
+        luxury << business
       when three_or_four_dollars.include?(business["price"]) && ( business["rating"] < 3 )
-        @poop << business
+        poop << business
       end
     end
 
-    if @unicorns.present?
+    if unicorns.present?
       search_id = rand.to_s[2..5] 
-      @unicorns.each do |unicorn|
+      unicorns.each do |unicorn|
         Business.create!(
           search_id: search_id,
           yelp_id: unicorn["id"],
@@ -90,15 +89,16 @@ class BusinessesController < ApplicationController
           meta_category: 'unicorn'
           )
       end
-
+      
+      return redirect_to root_path, alert: 'Result not found' if search_id.nil?
 
       if search_type == 'short_press' 
         redirect_to businesses_path(search_id: search_id)
-      elsif search_type == 'long_press' #this is the unicorn locator
-        redirect_to business_path(search_id: search_id)
+      elsif search_type == 'long_press'
+        redirect_to business_path(search_id)
       end
     else
-      render root_path
+      redirect_to root_path, alert: 'Result not found'
     end
   end
 
