@@ -1,25 +1,25 @@
-<div id="listings" style="text-align: center;">
-  <ol>
-      <% if @unicorns.present? %>
-      <% @unicorns.each do |unicorn| %>
-        <div class="unicorn">
-          <h4>A UNICORN IS NEAR:</h4>
-          <%= link_to image_tag(unicorn["image_url"], class: 'yelp-image-small'), unicorn["yelp_url"] %><br>
-          <div style="text-align:center; margin-top: -10px;">
-              <strong style="font-size: 18px; text-align: center;"><%= link_to(unicorn["name"], unicorn["yelp_url"]) %></strong>
-          </div>
-          <%#= link_to 'view on yelp', unicorn["yelp_url"], class: 'btn btn-md btn-danger' %>
-          <strong>Distance: </strong> <%= number_with_precision(( unicorn["distance"] * 0.000621371 ), :precision => 2 ) %> miles<br>
-          <strong>Price: </strong><span style="color:green; font-weight:600;"><%= unicorn["price"] %></span><br>
-          <strong>Rating: </strong>  <%= unicorn["rating"] %> stars<br>
-        <div id="google-adsense-ad-container">
-          <span>Add will go here</span><br>
-          <%= link_to image_tag('ad-example1.png'), 'http://www.123rf.com' %>
-        </div>
-        </div><br>
-      <% end %>
-      <% end %>
-  </ol>
-  <h5>Sorry no unicorns left</h5>
-</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.css">
 
+<style type="text/css">
+.swiper-container {
+}
+
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
+
+<div id="listings" style="text-align: center;">
+  <% if @unicorns.present? %>
+    <ol>
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <%= render partial: 'unicorn', locals: {unicorns: @unicorns} %>
+        </div>
+      </div>
+    </ol>
+  <% else %>
+    <h5>Sorry no unicorns left</h5>
+  <% end %>
+</div>
