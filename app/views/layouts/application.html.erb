@@ -7,6 +7,9 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= csrf_meta_tags %>
+    <!--     # for progressive web apps -->
+    <!-- https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/ -->
+    <link rel="manifest" href="/manifest.json">
 
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>

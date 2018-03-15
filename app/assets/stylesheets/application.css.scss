@@ -154,6 +154,7 @@ form#search_form {
 #unicorn {
   background-color: pink;
   border: 4px solid purple;
+  padding-top: 12px;
 }
 .unicorn a {
  color: darkblue;
@@ -177,6 +178,13 @@ form#search_form {
   text-align: center;
   display: block;
   position: relative;
+}
+a.yelp-image-small{
+  opacity: 1.0;
+}
+a.yelp-image-small:hover {
+  opacity: 0.6; 
+  border: 2px solid blue;
 }
 #yelp-logo {
   width: 100px;

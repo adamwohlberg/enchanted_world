@@ -1,11 +1,16 @@
 {
- "name": "Enchanted World App",
- "short_name": "Enchanted World App",
+ "name": "EnchantedWorld",
+ "short_name": "EnchantedWorld",
  "lang": "en-US",
  "start_url": "/",
  "background_color": "#2c3e50",
  "theme_color": "#178554",
  "display": "standalone",
+ "orientation": "any",
+ "serviceworker": {
+  "src": "/path_to_the_service_worker.js",
+  "scope": "/"
+ },
  "icons": [
   {
    "src": "/android-icon-36x36.png",

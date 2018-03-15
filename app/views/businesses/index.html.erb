@@ -4,16 +4,17 @@
       <% @unicorns.each do |unicorn| %>
         <div class="unicorn">
           <h4>A UNICORN IS NEAR:</h4>
-          <%= image_tag(unicorn["image_url"], class: 'yelp-image-small') %><br>
+          <%= link_to image_tag(unicorn["image_url"], class: 'yelp-image-small'), unicorn["yelp_url"] %><br>
           <div style="text-align:center; margin-top: -10px;">
               <strong style="font-size: 18px; text-align: center;"><%= link_to(unicorn["name"], unicorn["yelp_url"]) %></strong>
           </div>
-          <%= link_to 'view on yelp', unicorn["yelp_url"], class: 'btn btn-md btn-danger' %><br>
+          <%#= link_to 'view on yelp', unicorn["yelp_url"], class: 'btn btn-md btn-danger' %>
           <strong>Distance: </strong> <%= number_with_precision(( unicorn["distance"] * 0.000621371 ), :precision => 2 ) %> miles<br>
           <strong>Price: </strong><span style="color:green; font-weight:600;"><%= unicorn["price"] %></span><br>
           <strong>Rating: </strong>  <%= unicorn["rating"] %> stars<br>
         <div id="google-adsense-ad-container">
-          <%#= link_to image_tag('ad-example1.png'), 'http://www.123rf.com' %>
+          <span>Add will go here</span><br>
+          <%= link_to image_tag('ad-example1.png'), 'http://www.123rf.com' %>
         </div>
         </div><br>
       <% end %>
@@ -22,7 +23,3 @@
   <h5>Sorry no unicorns left</h5>
 </div>
 
-
-<!--           <strong>Address: </strong><%#= unicorn["location"]["display_address"].first.strip %><br>
-          <strong>Reviews: </strong> <%#= unicorn["review_count"] %><br>
-          <strong>Distance: </strong> <%#= number_with_precision(( unicorn["distance"] * 0.000621371 ), :precision => 2 ) %> miles<br> -->

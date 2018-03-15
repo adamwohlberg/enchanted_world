@@ -4,7 +4,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Enchanted World</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <%= fa_icon "bars" %>
@@ -60,12 +60,12 @@
         <div class="row">
           <div class="col-md-8 mx-auto">
             <h2 class="section-heading">Discover what all the buzz is about!</h2>
-            <p>Our app is available on any mobile device! Download now to get started!</p>
+            <p>Our app is available on any mobile device! No need to download now to get started - just whip out your smart phone!</p>
             <div class="badges">
 <!--               <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a> -->
-              <%= link_to image_tag('google-play-badge.svg', border: 0), '#', {class: 'badge-link'} %>
+              <%#= link_to image_tag('google-play-badge.svg', border: 0), '#', {class: 'badge-link'} %>
 <!--               <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a> -->
-              <%= link_to image_tag('app-store-badge.svg', border: 0), '#', {class: 'badge-link'} %>
+              <%#= link_to image_tag('app-store-badge.svg', border: 0), '#', {class: 'badge-link'} %>
             </div>
           </div>
         </div>
@@ -75,8 +75,8 @@
     <section class="features" id="features">
       <div class="container">
         <div class="section-heading text-center">
-          <h2>Unlimited Features, Unlimited Fun</h2>
-          <p class="text-muted">Check out what you can do with this app theme!</p>
+          <h2>Live in an Enchcanted World of Unlimited Unicorns</h2>
+          <p class="text-muted">Check out what you can do with this app!</p>
           <hr>
         </div>
         <div class="row">
@@ -102,15 +102,15 @@
                 <div class="col-lg-6">
                   <div class="feature-item">
                     <i class="icon-screen-smartphone text-primary"></i>
-                    <h3>Device Mockups</h3>
-                    <p class="text-muted">Ready to use HTML/CSS device mockups, no Photoshop required!</p>
+                    <h3>Find Unicorns</h3>
+                    <p class="text-muted">Tap to find 10 unicorns now near you!</p>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="feature-item">
                     <i class="icon-camera text-primary"></i>
-                    <h3>Flexible Use</h3>
-                    <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
+                    <h3>Unicorn Discovery</h3>
+                    <p class="text-muted">Long tap to turn on "Unicorn Discovery" and be notified when a unicorn is near!</p>
                   </div>
                 </div>
               </div>
@@ -119,14 +119,14 @@
                   <div class="feature-item">
                     <i class="icon-present text-primary"></i>
                     <h3>Free to Use</h3>
-                    <p class="text-muted">As always, this theme is free to download and use for any purpose!</p>
+                    <p class="text-muted">This app is free to use.</p>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="feature-item">
                     <i class="icon-lock-open text-primary"></i>
-                    <h3>Open Source</h3>
-                    <p class="text-muted">Since this theme is MIT licensed, you can use it commercially!</p>
+                    <h3>Web App</h3>
+                    <p class="text-muted">This app is available right on the internet - you can download the app icon to your smartphone's home page.</p>
                   </div>
                 </div>
               </div>
@@ -136,17 +136,25 @@
       </div>
     </section>
 
-    <section class="cta">
+    <section class="contact bg-primary" id="contact" >
+      <div class="container">
+        <h2>We
+          <%= fa_icon "heart" %>
+          Unicorns!</h2>
+      </div>
+    </section>
+
+    <section class="cta" style="padding-left: 50px;">
       <div class="cta-content">
         <div class="container">
-          <h2>Stop waiting.<br>Start building.</h2>
+          <h2>Stop searching.<br>Start finding unicorns.</h2>
           <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
         </div>
       </div>
       <div class="overlay"></div>
     </section>
 
-    <section class="contact bg-primary" id="contact">
+    <section class="contact bg-primary" id="contact" >
       <div class="container">
         <h2>We
           <%= fa_icon "heart" %>
@@ -179,7 +187,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <h1 id="logo-name">Enchanted World™ <span style="font-size: 16px; color:white;">Powered by</span><%= image_tag('Yelp_trademark_RGB_outline.png', id: 'yelp-logo') %></h1>
+        <h1 id="logo-name">Enchanted World™ <span style="font-size: 16px; color:white;">App Powered by</span><%= image_tag('Yelp_trademark_RGB_outline.png', id: 'yelp-logo') %></h1>
         </a>
 <!--         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
@@ -239,9 +247,9 @@
              </div>
            </div>
            <div class="col col-lg-5 category" id="unicorn">
+            <span><strong>Unicorns Live Here!</strong></span><br>
             <%= image_tag('unicorn-example.png') %>
-            <span>Unicorns Live Here</span><br>
-            <span>low price / high quality</span>
+            <span>low price / high quality</span><br>
           </div>
            <div class="col col-lg-5 category" id="luxury">
             <%= image_tag('diamond-example.png') %>
@@ -277,6 +285,15 @@
         </div>
       </div>
     </section> 
+
+    <section class="contact bg-primary" id="contact" >
+      <div class="container">
+        <h2>We
+          <%= fa_icon "heart" %>
+          progressive web apps!</h2>
+      </div>
+    </section>
+
 
     <footer>
       <div class="container">
