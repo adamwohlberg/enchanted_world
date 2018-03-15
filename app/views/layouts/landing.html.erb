@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" id="myViewport">
     <title><%= content_for?(:title) ? yield(:title) : "Enchanted World" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Enchanted World" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>

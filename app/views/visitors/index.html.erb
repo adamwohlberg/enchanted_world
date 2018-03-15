@@ -32,7 +32,8 @@
           <div class="col-lg-7 my-auto">
             <div class="header-content mx-auto">
               <h1 class="mb-5">Enchanted World is an app that will help you find affordable, four and five star rated businesses near you!</h1>
-              <a href="#download" class="btn btn-outline btn-xl js-scroll-trigger">Start Now for Free!</a>
+            <!--               <a href="#" id="start-now-for-free-button" class="btn btn-outline btn-xl">Start Now for Free!</a> -->
+            <%= link_to 'Start Now for Free!', root_path, id: "start-now-for-free-button", class: "btn btn-outline btn-xl" %>
             </div>
           </div>
           <div class="col-lg-5 my-auto">
@@ -60,7 +61,7 @@
         <div class="row">
           <div class="col-md-8 mx-auto">
             <h2 class="section-heading">Discover what all the buzz is about!</h2>
-            <p>Our app is available on any mobile device! No need to download now to get started - just whip out your smart phone!</p>
+            <p>Our app is available on any mobile device! No need to download anything from the app store - just whip out your smart phone to get started (or minimize the screen width of your desktop browser)!</p>
             <div class="badges">
 <!--               <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a> -->
               <%#= link_to image_tag('google-play-badge.svg', border: 0), '#', {class: 'badge-link'} %>
@@ -101,14 +102,14 @@
               <div class="row">
                 <div class="col-lg-6">
                   <div class="feature-item">
-                    <i class="icon-screen-smartphone text-primary"></i>
+                    <%= fa_icon "check-circle" %>
                     <h3>Find Unicorns</h3>
                     <p class="text-muted">Tap to find 10 unicorns now near you!</p>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="feature-item">
-                    <i class="icon-camera text-primary"></i>
+                    <%= fa_icon "search" %>
                     <h3>Unicorn Discovery</h3>
                     <p class="text-muted">Long tap to turn on "Unicorn Discovery" and be notified when a unicorn is near!</p>
                   </div>
@@ -117,14 +118,14 @@
               <div class="row">
                 <div class="col-lg-6">
                   <div class="feature-item">
-                    <i class="icon-present text-primary"></i>
+                    <%= fa_icon "angellist" %>
                     <h3>Free to Use</h3>
                     <p class="text-muted">This app is free to use.</p>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="feature-item">
-                    <i class="icon-lock-open text-primary"></i>
+                    <%= fa_icon "mobile" %>
                     <h3>Web App</h3>
                     <p class="text-muted">This app is available right on the internet - you can download the app icon to your smartphone's home page.</p>
                   </div>
@@ -148,7 +149,7 @@
       <div class="cta-content">
         <div class="container">
           <h2>Stop searching.<br>Start finding unicorns.</h2>
-          <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Let's Get Started!</a>
+            <%= link_to "Let's Get Started!", root_path, id: "lets-get-started-button", class: "btn btn-outline btn-xl" %>         
         </div>
       </div>
       <div class="overlay"></div>

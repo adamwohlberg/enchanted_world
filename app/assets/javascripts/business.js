@@ -12,6 +12,26 @@
 // });
 
 $(document).ready(function(){
+  $('#start-now-for-free-button').click(function( event ) {
+    event.preventDefault();
+    var left  = ($(window).width()/2)-(900/2),
+        top   = ($(window).height()/2)-(600/2),
+    popup = window.open ("#", "popup", "width=350, height=650, top="+top+", left="+left);
+  });
+});
+
+$(document).ready(function(){
+  $('#lets-get-started-button').click(function( event ) {
+    event.preventDefault();
+    var left  = ($(window).width()/2)-(900/2),
+        top   = ($(window).height()/2)-(600/2),
+    popup = window.open ("#", "popup", "width=350, height=650, top="+top+", left="+left);
+  });
+});
+
+
+
+$(document).ready(function(){
 
     $(".unicorn").on( "swipeleft swiperight dblclick", function() { 
       $(this).addClass('rotate-left').delay(700).fadeOut(1);
