@@ -1,0 +1,80 @@
+{
+  "name": "Enchanted World App",
+  "short_name": "EnchantedWorld",
+  "lang": "en-US",
+  "gcm_sender_id": "enchanted-world-app",
+  "start_url": "/",
+  "icons": [
+  
+    {
+      "src": "/assets/icons/android-icon-36x36-e38445545e140909ad3dcd2ba6b3fdaf293e40876a4a5e36d3a4259f204cd69a.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/icons/android-icon-48x48-db3d1850921a754957505ab26104edea442e8767774cdb4ec024af80eca3cf8b.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/images/icons/android-icon-60x60.png",
+      "sizes": "60x60",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/icons/android-icon-72x72-25ef1e1cf935b1fd099d090205fad15cf52cbdbac58fbaa386b53b435455e49d.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/images/icons/android-icon-76x76.png",
+      "sizes": "76x76",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/icons/android-icon-96x96-451a103beb129836e54fa7dda17d47fd6db7b6fdb34a62fd8fddf1b20612bfe1.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/images/icons/android-icon-120x120.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/images/icons/android-icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/images/icons/android-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/icons/android-icon-192x192-114a042c6a759f7c537d1c19c3e09e11e954c5a6f67ecbd6a0e17fa927582493.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/images/icons/android-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  
+  ],
+  "theme_color": "#000000",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "orientation": "portrait"
+}

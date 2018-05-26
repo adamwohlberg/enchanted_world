@@ -1,0 +1,79 @@
+{
+  "name": "Enchanted World App",
+  "short_name": "EnchantedWorld",
+  "lang": "en-US",
+  "start_url": "/",
+  "icons": [
+  
+    {
+      "src": "/assets/icons/android-icon-36x36-f9f8c66934f276e0a77ddf8faad552c779a96a35ea869d6291c601e03495a8ae.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/icons/android-icon-48x48-3e17304f7d6d4ea924769d418503320247c64a7ef0b0752d4d8454e89d781357.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/icons/android-icon-60x60-e1a00f4427b5b2e0a393b50616bd1bbd6cb9dfd839fcc14df4f5d120bdae8821.png",
+      "sizes": "60x60",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/icons/android-icon-72x72-c122c6fee6be6b55e1bbcc35f95bd98d4cf98f7df06e124510a6526e0ddc9caf.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/icons/android-icon-76x76-d08aaf1baa407c69d1b5852c74e5e309201c4bd98ab8ff6f1fb8453c0be12c04.png",
+      "sizes": "76x76",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/icons/android-icon-96x96-15e4e076b15169693d399285ab85aa0a8247b75c6100317afd8e6a9188df0ccc.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/icons/android-icon-120x120-a669723fe8198f0e7a463905f5821bf8a156fc7077ee047abd056429add670a7.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/icons/android-icon-152x152-83733b374d5cacf3df11f02d80edd6c58133aca6df7df53861cb777712a584d4.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/icons/android-icon-180x180-6481984bcdbf1742ec44460fafa1baaee8542422b03e538db9979fee3fa2a42e.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/assets/icons/android-icon-192x192-b7f616aea6eb4807fc5f7fb0d99b3498d0379a9d859d0895644bc549352b556e.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+  
+    {
+      "src": "/images/icons/android-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  
+  ],
+  "theme_color": "#000000",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "orientation": "portrait"
+}

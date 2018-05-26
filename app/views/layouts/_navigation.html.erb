@@ -1,0 +1,18 @@
+<%# navigation styled for Bootstrap 4.0 %>
+<div class="" style="margin-top: -90px; margin-bottom: 100px;">
+  <nav class="navbar navbar-dark bg-inverse">
+    <ul class="nav navbar-nav clearfix navbar-right">
+      <li class="nav-item">
+        <button id="navbar-toggler" class="navbar-toggler hidden-sm-up nav-link" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+          &#9776;
+        </button>
+      </li>
+    </ul>
+    <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+      <%= link_to "Home", root_path, class: 'navbar-brand' %>
+      <ul class="nav navbar-nav">
+        <%= render 'layouts/navigation_links' %>
+      </ul>
+    </div>
+  </nav>
+</div>

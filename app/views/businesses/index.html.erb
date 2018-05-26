@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.css">
+
+<div id="listings" style="text-align: center;">
+  <% if @unicorns.present? %>
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <%= render partial: 'unicorn', locals: {unicorns: @unicorns} %>
+        </div>
+        <div class="swiper-button swiper-button-prev"></div>
+        <div class="swiper-button swiper-button-next"></div>
+      </div>
+  <% else %>
+    <h5>Sorry no unicorns left</h5>
+  <% end %>
+</div>
+
+<!--    #the toggle switch -->
+  <div style="text-align:center; margin-top: -150px; position:relative; z-index:999;">
+    <h4 id="toggle-to-find-unicorns" style="color: white; width: 99%; position: relative;">turn <span id="on-off">on</span> <%= @user.setting.search_type.singularize  %> finder:</h4><br>
+    <label class="switch" style="margin-top: -20px;">
+      <% if @user.tawggle_on? %>
+        <input type="checkbox" checked id='unicorn-finder-toggle-switch' class='toggle'>
+      <% else %>
+        <input type="checkbox" id='unicorn-finder-toggle-switch' class='toggle'>      
+      <% end %>
+      <span class="slider round"></span>
+    </label>
+  </div>

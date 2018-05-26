@@ -1,0 +1,494 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "font-awesome";
+
+.masthead {
+  margin-top: -58px;
+}
+#navbar-toggler {
+  color: #ffffff !important;
+}
+#navbar-toggler.nav-link, #navbar-toggler.navbar-toggler.hidden-sm-up {
+  color: #ffffff !important;
+}
+// ipads need this for jquery click events to fire
+.btn, .device-container, #unicorn {
+  cursor: pointer;
+}
+
+section {
+  margin-top: 0px;
+}
+.app-screenshot {
+  min-height: 505px !important;
+}
+#mainNav {
+  height: 90px;
+  background-color: #2e2e2e;
+}
+.swiper-button.swiper-button-prev, .swiper-button.swiper-button-next {
+  margin-top: 80px;
+} 
+#hamburgerMenu {
+  color: white;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.unicorn-headline {
+  color: #fff;
+}
+.ad-placeholder img {
+  width: 50%;
+  height: 100%;
+}
+#lets-get-started-button-two {
+  background-color: grey;
+}
+#listings {
+ margin-top: -125px;
+ padding-left: 0px;
+ text-align: center;
+ min-height: 600px;
+}
+#listings.show {
+ margin-top: -150px;
+}
+#screenshot {
+  width: 500px;
+  height: 720px;
+}
+.starRatings img {
+  margin-bottom: 26px;
+  opacity: 1.0;
+}
+.starRatings img:hover {
+  opacity: 0.5;
+}
+header {
+  margin-top: 90px;
+}
+form#search_form {
+  border: none;
+  display: none;
+}
+.unicorn {
+  padding: 30px 0px 0px 0px;
+  width: 100%; 
+  height: 600px; 
+  margin: -87px 0px 0px 0px; 
+  cursor: pointer;
+  display: block;
+  margin-top: -23px !important;
+  border-radius: 20px;
+}
+.unicorn:first-child {
+  margin-top: 0px !important;
+}
+#start-now-for-free-button {
+  background-color: grey;
+  color: white;
+}
+.swipe {
+  display: none;
+}
+#grid-container {
+  margin-left: -70px;
+}
+#google-adsense-ad-container {
+  width:110%;
+  height: 200px;
+  display: block;
+  margin-top: 30px;
+  margin-left: -30px;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  overflow: visible;
+  text-align: center;
+}
+#logo-name {
+  font-weight: 800;
+  font-size: 50px; 
+  margin-top: 25px;
+}
+.hidden {
+  visibility: hidden;
+}
+.shown {
+  visibility: visible;
+}
+
+#cell-number-input {
+  margin-top: 30px;
+  border-radius: 10px;
+  font-size: 30px;
+  line-height: 30px;
+  padding: 10px;
+  text-align:center;
+  visibility: hidden;
+}
+
+#long-tap-to-find-unicorns {
+  // visibility: hidden;
+  display: none;
+  margin-top: -27px;
+}
+.pulse-button {
+
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border: none;
+  box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+  border-radius: 50%;
+  background-color: #e84c3d;
+  background-size:cover;
+  background-repeat: no-repeat;
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+.pulse-button:hover 
+{
+  -webkit-animation: none;-moz-animation: none;-ms-animation: none;animation: none;
+}
+
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 65px rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 65px rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 65px rgba(232, 76, 61, 0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 65px rgba(232, 76, 61, 0);}}
+
+#mobile-form {
+      text-align: center;
+}
+img #mobile-unicorn-button {
+  width: 300px;
+}
+#mobile-unicorn-button {
+  // -webkit-touch-callout: !important none; /* prevent callout to copy image, etc when tap to hold */
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 5px solid #fff;
+  padding: 0px;
+}
+#mobile-unicorn-button:hover {
+  // -webkit-touch-callout: !important none; /* prevent callout to copy image, etc when tap to hold */ 
+  transition: all .2s ease-in-out; 
+  transform: scale(1.1);
+}
+#logo-unicorn {
+  width: 90px;
+  height: 90px;
+}
+#unicorn {
+  background-color: pink;
+  border: 4px solid purple;
+  padding-top: 12px;
+}
+.unicorn a {
+ color: darkblue;
+}
+#luxury, #cheapo, #poop {
+  opacity: 0.3;
+}
+.category img {
+  width: 85px;
+  height: 85px;
+  text-align: center;
+}
+.category {
+  padding-top: 30px;
+  text-align: center;
+}
+.yelp-image {
+  width: 105%;
+  max-width: 525px;
+  height: 260px !important;
+  text-align: center;
+  display: block;
+  position: relative;
+}
+a.yelp-image {
+  opacity: 1.0;
+}
+a.yelp-image:hover {
+  opacity: 0.8; 
+}
+#yelp-logo {
+  width: 100px;
+}
+.starRating {
+   -webkit-transform: rotate(270deg) scale(2.8);
+    -moz-transform: rotate(270deg) scale(2.8);
+    -o-transform: rotate(270deg) scale(2.8);
+    -ms-transform: rotate(270deg) scale(2.8);
+    transform: rotate(270deg) scale(2.8);
+    margin-top: 110px;
+    margin-left: 65px;
+}
+#dollars-grid-container {
+background-color: transparent !important;
+}
+
+.dollarRating {
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: space-around;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    font-weight: 800;
+    width: 40%;
+    margin-left: 250px;
+    z-index: 2;
+    height: 89%;
+    position: absolute;
+    color: #000;
+    // border: 5px solid red;
+}
+
+#fourDollars, #threeDollars, #twoDollars, #oneDollar {
+/*  padding: 13% 0px;*/
+/*    border: 2px solid green;*/
+    position: relative;
+    width: 100%;
+    margin: 0px 50% 0px 0px;
+    text-align: right;
+    font-size: 30px;
+/*    border: 2px solid black;*/
+}
+#oneDollar {
+  margin-left: 300px;
+}
+.dollarRating > div:hover,
+.dollarRating > div:hover ~ div {
+  color: #008000;
+}
+.dollarhover {
+  color: #008000;
+}
+
+.selected {
+  background-color: yellow !important;
+}
+.deselected {
+  background-color: black !important;
+}
+
+.dollar-sign {
+  font-size: 33px;
+  color: green;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-left: 130px;
+}
+.main-grid .row {
+  // border: 1px solid black;
+  // background: lightgrey; 
+  height: 150px;
+}
+.main-grid .col {
+  // border: 1px dashed black;
+  // background: lightgrey; 
+  height:  150px;
+  padding-top: 30px;
+  text-align: center;
+  display: block;
+}
+
+.category {
+  border: 1px solid black;
+  height:  150px;
+  background: lightgrey; 
+}
+
+#body-gradient {
+  background: linear-gradient(to bottom, #3366ff 0%, #99ccff 100%);
+  border: 1px solid #3366ff; //this covers bottom section 
+}
+
+// @media screen and (max-width: 600px) {
+
+//     // img { 
+//     //   -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+//     // }
+//     // img #mobile-unicorn-button { 
+//     //   -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+//     // }
+
+// }
+@media screen and (max-width: 900px) {
+
+    #logo-section, .masthead, #download, #features, #what-is-a-unicorn, section.cta, section#contact { 
+      display: none;
+    }
+    #mainNav {
+      visibility: hidden;
+    }
+    #hamburgerNav {
+      visibility: visible;
+    }
+    body {
+      background: linear-gradient(to bottom, #3366ff 0%, #99ccff 100%);
+      border: 1px solid #3366ff; //this covers bottom section 
+    }
+    footer {
+      display: none;
+    }
+    #mobile-form {
+      display: block;
+    }
+    a {
+      color: white;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #mobile-form {
+      display: none;
+    }
+}
+
+#adsense-container {
+  width: 100%;
+  border: 10px solid pink;
+  height: 20px;
+}
+
+.rotate-left {
+ border: 8px solid grey !important;
+ border-radius: 30px !important;
+/* transform: rotate(-360deg) scale(1.0) !important;*/
+ -webkit-animation: rock-developer-left 1.5s ease-in-out;
+}
+.rotate-left:hover, {
+ border: 8px solid steelblue !important;
+}
+.rotate-right:hover, {
+ border: 8px solid green !important;
+}
+.rotate-right {
+ border: 8px solid green !important;
+ border-radius: 30px !important;
+ transform: rotate(360deg) scale(1.0) !important;
+ -webkit-animation: rock-developer-right 1.5s ease-in-out;
+}
+.rotate-none {
+  transform: rotate(0deg) scale (1.0) !important;
+}
+
+/* Developer Keyframes
+-------------------------------------------- */
+@-webkit-keyframes rock-developer-left {
+  0%     { -webkit-transform: rotate(0) translateY(0);}
+    20%    { -webkit-transform: rotate(-3deg) translateY(0px);}
+    40%    { -webkit-transform: rotate(3deg) translateY(0px);}
+    60%    { -webkit-transform: rotate(-1.5deg) translateY(0px);}   
+    80%    { -webkit-transform: rotate(1.5deg) translateY(0px);}
+  100%   { -webkit-transform: rotate(0) translateY(0);}
+}
+
+@-webkit-keyframes rock-developer-right {
+  0%     { -webkit-transform: rotate(0) translateY(0);}
+    20%    { -webkit-transform: rotate(3deg) translateY(0px);}
+    40%    { -webkit-transform: rotate(-3deg) translateY(0px);}
+    60%    { -webkit-transform: rotate(1.5deg) translateY(0px);}   
+    80%    { -webkit-transform: rotate(-1.5deg) translateY(0px);}
+  100%   { -webkit-transform: rotate(0) translateY(0);}
+}
+
+.like {
+  border-radius: 5px;
+  padding: 15px 15px;
+  border: 2px solid green;
+  color: green;
+  text-transform: uppercase;
+  font-size: 4em;
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  text-shadow: none;
+}
+.dislike {
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 2px solid red;
+  color: red;
+  text-transform: uppercase;
+  font-size: 4em;
+  position: absolute;
+  top: 120px;
+  left: 70px;
+  text-shadow: none;
+}
+

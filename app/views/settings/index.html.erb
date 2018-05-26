@@ -1,0 +1,11 @@
+
+
+
+<%= simple_form_for @user.setting, :method => :put do |f| %>
+        <label>Category:</label>
+        <%= f.input :search_term, as: :select, :collection => @categories, label: false, include_blank: false, include_hidden: false, placeholder: 'restaurant' %>
+        <label>Search For:</label>
+        <%= f.input :search_type, as: :select, :collection => @choices, label: false, include_blank: false, include_hidden: false %> 
+        <%= f.button :submit, 'Save', class: "btn btn-lrg btn-success" %>
+        <%= link_to 'Back', root_path, class: 'btn btn-lrg btn-primary' %>
+      <% end %><br>

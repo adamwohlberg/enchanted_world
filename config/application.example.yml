@@ -1,0 +1,16 @@
+
+development:
+YELP_API_KEY: 'abc'
+GOOGLE_CLOUD_MESSAGING: 'abc'
+VAPID_PUBLIC_KEY: 'abc' 
+VAPID_PRIVATE_KEY: 'abc'
+
+test:
+YELP_API_KEY: 'abc'
+GOOGLE_CLOUD_MESSAGING: 'abc'
+
+production:
+YELP_API_KEY: 'abc'
+GOOGLE_CLOUD_MESSAGING: 'abc'
+VAPIDKEY_PUBLIC_KEY: 'abc'
+VAPIDKEY_PRIVATE_KEY: 'abc'

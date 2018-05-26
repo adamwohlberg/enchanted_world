@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>Running ruby debug in rspec? - Stack Overflow</title>
+        <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+        <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+        <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="https://stackoverflow.com/opensearch.xml">
+
+
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec">
+        <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:domain" content="stackoverflow.com">
+        <meta name="twitter:title" property="og:title" itemprop="title name" content="Running ruby debug in rspec?">
+        <meta name="twitter:description" property="og:description" itemprop="description" content="I&#39;m trying to get Ruby debugger running in one of my specs:
+
+describe User do
+  it &quot;should be valid&quot; do
+    debugger
+    User.new.should be_valid
+  end
+end
+When I run rspec though, I get:
+
+debugger ">
+        <script src="./Running ruby debug in rspec_ - Stack Overflow_files/osd.js"></script><script src="./Running ruby debug in rspec_ - Stack Overflow_files/pubads_impl_rendering_187.js"></script><script src="./Running ruby debug in rspec_ - Stack Overflow_files/rules-p-c1rF4kxgLUzNc.js" async=""></script><script async="" src="./Running ruby debug in rspec_ - Stack Overflow_files/quant.js"></script><script async="" src="./Running ruby debug in rspec_ - Stack Overflow_files/beacon.js"></script><script async="" src="./Running ruby debug in rspec_ - Stack Overflow_files/analytics.js"></script><script src="./Running ruby debug in rspec_ - Stack Overflow_files/jquery.min.js"></script>
+        <script src="./Running ruby debug in rspec_ - Stack Overflow_files/stub.en.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="./Running ruby debug in rspec_ - Stack Overflow_files/stacks.css">
+
+        <link rel="stylesheet" type="text/css" href="./Running ruby debug in rspec_ - Stack Overflow_files/primary.css">
+    
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Running ruby debug in rspec?&#39;" href="https://stackoverflow.com/feeds/question/5446594">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+
+            StackExchange.ready(function () {
+                                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:2,shownCommentCount:2,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:5446594});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '5446594');
+                // TODO: There's a CR for replacing this with inline info on the question for moderators
+                // https://trello.com/c/ynDHhvrB/158-cr-move-the-mod-info-out-of-the-margin-and-into-the-post-estimate-needed
+                // Before we roll out the sidebar everywhere (or at least shortly after that?), we should implement it.
+                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+        
+        
+        
+        
+        
+             
+        
+                <script>
+        StackExchange.init({"locale":"en","serverTime":1521486412,"routeName":"Questions/Show","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"childUrl":"https://meta.stackoverflow.com","enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"752176a9ea30835aad5d93317ccdb7df5a42b2a1f33e237c746ee7fb6a95402a","tid":"42805e72-ea28-bda8-f092-9f9a4792cbc3","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true,"canSeeNewHeaderDesign":true},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4}}, {"site":{"allowImageUploads":true,"commentHighlightingWithCSS":true,"enableUserHovercards":true,"styleCode":true,"enableImgurHttps":true,"forceHttpsImages":true},"comments":{},"userProfile":{"openGraphAPIKey":"58740831ad23540e00c58987"},"tags":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true},"flags":{"allowRetractingFlags":true},"topBar":{"showNewFeatureNotice":true},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"paths":{},"markdown":{"asteriskIntraWordEmphasis":true},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000},"slack":{"sidebarAdDismissCookie":"slack-sidebar-ad"},"subscriptions":{}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"5fbf37d096d1","js/moderator.en.js":"1a3d30311be0","js/full-anon.en.js":"516dfa433247","js/full.en.js":"5c3735406271","js/wmd.en.js":"bdcd031f86d0","js/third-party/jquery.autocomplete.min.js":"bdb258e949a8","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"f33dcdac10d2","js/help.en.js":"ce2977cf4348","js/tageditor.en.js":"ea9fc738c402","js/tageditornew.en.js":"b0713607038e","js/inline-tag-editing.en.js":"e7aa31e8eba1","js/revisions.en.js":"8f22ba768cac","js/review.en.js":"d4c2d6b701da","js/tagsuggestions.en.js":"78eee7c19ab2","js/post-validation.en.js":"94b15b1f30b1","js/explore-qlist.en.js":"d35e253e2f03","js/events.en.js":"f70d76783bb1","js/keyboard-shortcuts.en.js":"3793c373d11a","js/external-editor.en.js":"bd3073c45fe4","js/adops.en.js":"22a9bd59b1e9","js/external-editor.en.js":"bd3073c45fe4","js/snippet-javascript.en.js":"0d8955a691c8","js/snippet-javascript-codemirror.en.js":"793363645454"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    <noscript id="noscript-css">&lt;style&gt;body,.top-bar{margin-top:1.9em}&lt;/style&gt;</noscript>
+    <link rel="preload" href="./Running ruby debug in rspec_ - Stack Overflow_files/integrator.js" as="script"><script type="text/javascript" src="./Running ruby debug in rspec_ - Stack Overflow_files/integrator.js"></script><script src="./Running ruby debug in rspec_ - Stack Overflow_files/pubads_impl_187.js" async=""></script><script async="" src="./Running ruby debug in rspec_ - Stack Overflow_files/full-anon.en.js"></script><link rel="stylesheet" href="./Running ruby debug in rspec_ - Stack Overflow_files/clc.min.css" type="text/css"><script async="" src="./Running ruby debug in rspec_ - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./Running ruby debug in rspec_ - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./Running ruby debug in rspec_ - Stack Overflow_files/prettify-full.en.js"></script><script async="" src="./Running ruby debug in rspec_ - Stack Overflow_files/external-editor.en.js"></script></head>
+    <body class="question-page new-topbar">
+        <script async="" src="./Running ruby debug in rspec_ - Stack Overflow_files/185901-159836282584097.js"></script>
+
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<header class="top-bar js-top-bar _fixed _scrolling">
+    <div class="-container">
+        <div class="-main">
+                                <a href="https://stackoverflow.com/" class="-logo js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        <span class="-img">Stack Overflow.NameWithoutStackExchange</span>
+                    </a>
+
+
+                <nav class="navigation" role="navigation" aria-label="site navigation">
+                    <ol class="-list">
+        <li class="-item _current">
+            <a id="nav-questions" href="https://stackoverflow.com/questions" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">Questions</a>
+        </li>
+        <li class="-item">
+            <a id="nav-jobs" href="https://stackoverflow.com/jobs?med=site-ui&amp;ref=jobs-tab" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:6})">Developer Jobs</a>
+        </li>
+        <li class="-item">
+            <a id="nav-tags" href="https://stackoverflow.com/tags" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">Tags</a>
+        </li>
+        <li class="-item">
+            <a id="nav-users" href="https://stackoverflow.com/users" class="-link js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">Users</a>
+        </li>
+                    </ol>
+                </nav>
+
+        </div>
+
+            <form id="search" action="https://stackoverflow.com/search" method="get" class="searchbar" autocomplete="off" role="search">
+                    <input name="q" type="text" placeholder="Search…" value="" tabindex="1" autocomplete="off" maxlength="240" class="f-input js-search-field">
+                    <button type="submit" aria-label="Search..." class="btn-topbar-primary js-search-submit"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M12.86 11.32L18 16.5 16.5 18l-5.18-5.14v-.35a7 7 0 1 1 1.19-1.19h.35zM7 12A5 5 0 1 0 7 2a5 5 0 0 0 0 10z"></path></svg></button>
+            </form>
+
+        
+
+
+    
+
+<div class="-actions">
+    <nav class="secondary-nav">
+        <div class="-dialog-container js-topbar-dialog-corral">
+
+
+    <div class="topbar-dialog siteSwitcher-dialog dno">
+        <div class="header">
+            <h3><a href="https://stackoverflow.com/">current community</a>
+            </h3>
+        </div>
+        <div class="modal-content current-site-container">
+            <ul class="current-site">
+                    <li>
+                            <div class="related-links">
+            <a href="https://stackoverflow.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">help</a>
+                    <a href="https://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+    <a href="https://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="favicon favicon-stackoverflow site-icon" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                    </li>
+                    <li class="related-site">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                            <a href="https://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="site.switch({ target_site:552, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="favicon favicon-stackoverflowmeta site-icon" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+your communities            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=%2fusers%2fstory%2fcurrent" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f5446594%2frunning-ruby-debug-in-rspec" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">company blog</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+                <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="https://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="https://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="https://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                                About Us
+                                <span class="item-summary">
+                                    Learn more about Stack Overflow the company
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                                Business
+                                <span class="item-summary">
+                                    Learn more about hiring developers or posting ads with us
+                                </span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+    </div>
+        </div>
+        <ol class="-list">
+    <li class="-item">
+        <a href="https://stackexchange.com/users/?tab=inbox" class="-link js-inbox-button" title="Recent inbox messages">
+            <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18"><path d="M15.19 1H4.63c-.85 0-1.6.54-1.85 1.35L0 10.79V15c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2v-4.21l-2.87-8.44A2 2 0 0 0 15.19 1zm-.28 10l-2 2h-6l-2-2H1.96L4.4 3.68A1 1 0 0 1 5.35 3h9.12a1 1 0 0 1 .95.68L17.86 11h-2.95z"></path></svg>
+            <span class="indicator-badge js-unread-count _important" style="display: none;"></span>
+        </a>
+    </li>
+    <li class="-item">
+        <a href="https://stackexchange.com/users/?tab=reputation" class="-link js-achievements-button" title="Recent achievements: reputation, badges, and privileges earned" data-unread-class="_highlighted-positive">
+            <svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewBox="0 0 18 18"><path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3zM3 7c-.5 0-1-.5-1-1V4h1v3zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1zM16 6c0 .5-.5 1-1 1V4h1v2z"></path></svg>
+            <span class="indicator-badge js-unread-count _positive" style="display: none;"></span>
+        </a>
+    </li>
+
+    <li class="-item"><a href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#" class="-link js-help-button" title="Help Center and other resources">
+        <svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 1 0 0 16A8 8 0 0 0 9 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8a5.8 5.8 0 0 1-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 0 0-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66a5.29 5.29 0 0 1 1.43-1.22c.16-.12.28-.25.38-.39a1.34 1.34 0 0 0 .02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"></path></svg>
+    </a></li>
+
+    <li class="-item">
+        <a href="https://stackexchange.com/" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 172 Stack Exchange sites">
+            <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 0 0 2-2v-2H1v2zM15 1H3a2 2 0 0 0-2 2v2h16V3a2 2 0 0 0-2-2zM1 6h16v4H1V6z"></path></svg>
+        </a>
+    </li>
+        </ol>
+    </nav>
+            <div class="-ctas">
+                        <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f5446594%2frunning-ruby-debug-in-rspec" class="login-link btn-clear" rel="nofollow">Log In</a>
+                        <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=%2fusers%2fstory%2fcurrent" class="login-link btn-topbar-primary" rel="nofollow" data-ga="[&quot;Sign Up&quot;,&quot;Sign Up Navigation&quot;,&quot;Header&quot;,null,null]">Sign Up</a>
+
+            </div>
+</div>
+
+    </div>
+</header>
+
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+        StackExchange.scrollPadding.setPaddingTop(60, 10);     </script>
+
+
+<div id="announcement-banner" data-campaign="2018-03-13.dev-survey-2018" data-cookie="notice-dsr" data-end-date="1523520000000">
+    <div class="-container">
+        <span class="-body">The results are in!</span>
+        <a class="-link js-link js-gps-track" href="https://insights.stackoverflow.com/survey/2018/" data-ga="[&quot;dev-survey-2018&quot;,&quot;Announcement Banner&quot;,&quot;https://insights.stackoverflow.com/survey/2018/&quot;,null,{&quot;dimension4&quot;:&quot;dev-survey-2018&quot;}]" data-gps-track="announcement_banner.click({campaign: &#39;2018-03-13.dev-survey-2018&#39;, location: 2, action: 2})">See the 2018 Developer Survey results. »</a>
+        <a class="-dismiss js-dismiss js-gps-track" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#" title="dismiss" data-gps-track="announcement_banner.click({campaign: &#39;2018-03-13.dev-survey-2018&#39;, location: 2, action: 1})"><svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9z"></path></svg></a>
+    </div>
+</div>
+<script>
+    StackExchange.ready(function () {
+        var $banner = $('#announcement-banner');
+
+        function setCookie(value) {
+            $.cookie($banner.data('cookie'), value, {
+                expires: (new Date($banner.data('end-date') + 86400000)),
+                path: '/'
+            });
+        }
+
+        $banner.find('.js-link').click(function () {
+            setCookie('2;' + Date.now());
+        });
+
+        $banner.find('.js-dismiss').click(function () {
+            setCookie('4;' + Date.now());
+            $banner.animate({ height: '0', opacity: 0 }, 'fast', 'linear', function () { $banner.remove(); });
+            return false;
+        });
+    });
+</script>
+
+    <div class="container _full ">
+        
+
+
+        <div id="content" class="snippet-hidden">
+
+
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+<div id="herobox-mini" class="js-dismissable-hero" data-campaign-name="lso-mini">
+    <div id="hero-content">
+        <span id="controls">
+                <a href="https://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=%2fusers%2fstory%2fcurrent" id="tell-me-more" class="button">Sign up</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a community of 8.6 million programmers, just like you, helping each other. Join them; it only takes a minute:
+        </div>        
+    </div>
+    <script>
+        StackExchange.ready(function () {
+
+            StackExchange.Hero.init("lso-mini", "a");
+
+            var clickSource = $("body").attr("class") + '-mini';
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+                location = 2;
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+                location = 2;
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+                location = 4;
+            }
+
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox-mini #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "close", location: location }, true);
+                });
+                StackExchange.Hero.dismiss();
+
+                var $hero = $("#herobox-mini");
+                $hero.slideUp('fast', function () { $hero.remove(); });
+                return false;
+            });
+        });
+    </script>
+</div>    <div class="inner-content clearfix">
+        <div id="question-header">
+                    <h1 itemprop="name"><a href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec" class="question-hyperlink">Running ruby debug in rspec?</a></h1>
+
+            
+<div class="aside-cta" role="navigation" aria-label="ask new question">
+        <a href="https://stackoverflow.com/questions/ask" class="btn-outlined">Ask Question</a>
+</div>
+
+        </div>
+            <div id="mainbar" role="main" aria-label="question and answers">
+
+            
+
+<div class="question" data-questionid="5446594" id="question">
+
+    <div id="dfp-tlb" class="everyonelovesstackoverflow" data-google-query-id="CJP79MmK-dkCFdFqAQodk1MGlA" data-clc-prefilled="true" data-clc-ready="true"><div id="google_ads_iframe_/248424177/stackoverflow.com/lb/question-pages_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/248424177/stackoverflow.com/lb/question-pages_0" title="3rd party ad content" name="google_ads_iframe_/248424177/stackoverflow.com/lb/question-pages_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" src="./Running ruby debug in rspec_ - Stack Overflow_files/saved_resource.html"></iframe></div></div>    
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="5446594">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">69</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#">favorite</a>
+        <div class="favoritecount"><b>10</b></div>
+
+
+</div>
+
+            </div>
+
+            
+<div class="postcell post-layout--right">
+    <div class="post-text" itemprop="text">
+
+<p>I'm trying to get Ruby debugger running in one of my specs:</p>
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="pln">describe </span><span class="typ">User</span><span class="pln"> </span><span class="kwd">do</span><span class="pln">
+  it </span><span class="str">"should be valid"</span><span class="pln"> </span><span class="kwd">do</span><span class="pln">
+    debugger
+    </span><span class="typ">User</span><span class="pun">.</span><span class="pln">new</span><span class="pun">.</span><span class="pln">should be_valid
+  </span><span class="kwd">end</span><span class="pln">
+</span><span class="kwd">end</span></code></pre>
+
+<p>When I run rspec though, I get:</p>
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="pln">debugger statement ignored</span><span class="pun">,</span><span class="pln"> use </span><span class="pun">-</span><span class="pln">d </span><span class="kwd">or</span><span class="pln"> </span><span class="pun">--</span><span class="pln">debug option to enable debugging</span></code></pre>
+
+<p>I've tried the following:</p>
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="pln">rake spec </span><span class="pun">--</span><span class="pln">debug
+rake spec </span><span class="pun">--</span><span class="pln">debug  </span><span class="pun">--</span><span class="pln">trace
+rake spec</span><span class="pun">:</span><span class="pln">models </span><span class="pun">--</span><span class="pln">debug
+bundle exec rspec </span><span class="pun">--</span><span class="pln">debug
+bundle exec rspec </span><span class="pun">--</span><span class="pln">debug spec</span><span class="pun">/</span><span class="pln">models</span><span class="pun">/</span><span class="pln">
+bundle exec rspec </span><span class="pun">--</span><span class="pln">d spec</span><span class="pun">/</span><span class="pln">models</span><span class="pun">/</span><span class="pln">
+bundle exec </span><span class="str">"rspec --debug"</span><span class="pln"> spec</span><span class="pun">/</span><span class="pln">models</span><span class="pun">/</span><span class="pln">
+bundle exec rspec </span><span class="pun">--</span><span class="pln">debugger spec</span><span class="pun">/</span><span class="pln">models</span><span class="pun">/</span><span class="pln">
+bundle exec </span><span class="pun">--</span><span class="pln">debugger rspec spec</span><span class="pun">/</span><span class="pln">models</span><span class="pun">/</span><span class="pln">
+bundle </span><span class="pun">--</span><span class="pln">debugger exec rspec spec</span><span class="pun">/</span><span class="pln">models</span><span class="pun">/</span><span class="pln">
+bundle </span><span class="pun">--</span><span class="pln">debugger exec rspec spec</span><span class="pun">/</span><span class="pln">models</span><span class="pun">/</span><span class="pln">
+bundle exec </span><span class="pun">--</span><span class="pln">debugger rspec spec</span><span class="pun">/</span><span class="pln">models</span><span class="pun">/</span><span class="pln">
+bundle exec rspec </span><span class="pun">--</span><span class="pln">debugger spec</span><span class="pun">/</span><span class="pln">models</span><span class="pun">/</span></code></pre>
+
+<p>Any ideas on how to exec rspec in the right way?  I'm on Rails 3.0.5, Ruby 1.9.2, RSpec 2.5.1, ruby-debug19.</p>
+
+<p>Thanks,
+Justin.</p>
+    </div>
+    <div class="post-taglist">
+        <a href="https://stackoverflow.com/questions/tagged/ruby-on-rails" class="post-tag js-gps-track" title="show questions tagged &#39;ruby-on-rails&#39;" rel="tag">ruby-on-rails</a> <a href="https://stackoverflow.com/questions/tagged/rspec" class="post-tag js-gps-track" title="show questions tagged &#39;rspec&#39;" rel="tag">rspec</a> <a href="https://stackoverflow.com/questions/tagged/rake" class="post-tag js-gps-track" title="show questions tagged &#39;rake&#39;" rel="tag">rake</a> <a href="https://stackoverflow.com/questions/tagged/ruby-debug" class="post-tag js-gps-track" title="show questions tagged &#39;ruby-debug&#39;" rel="tag">ruby-debug</a> 
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/q/5446594" title="short permalink to this question" class="short-link" id="link-post-5446594">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/5446594/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </div>
+
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://stackoverflow.com/posts/5446594/revisions" title="show all edits to this post">edited <span title="2017-06-14 15:20:38Z" class="relativetime">Jun 14 '17 at 15:20</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/5025116/sebastian-palma"><div class="gravatar-wrapper-32"><img src="./Running ruby debug in rspec_ - Stack Overflow_files/7WdYi.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/5025116/sebastian-palma">Sebastian Palma</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 12,330" dir="ltr">12.3k</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="14 silver badges"><span class="badge2"></span><span class="badgecount">14</span></span><span title="31 bronze badges"><span class="badge3"></span><span class="badgecount">31</span></span>
+        </div>
+    </div>
+</div>    </div>
+    <div class="post-signature owner grid--cell fl0">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2011-03-27 01:28:54Z" class="relativetime">Mar 27 '11 at 1:28</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/320619/allyl-isocyanate"><div class="gravatar-wrapper-32"><img src="./Running ruby debug in rspec_ - Stack Overflow_files/ee7d3e88b401e9eed01673443a726bc7" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/320619/allyl-isocyanate">Allyl Isocyanate</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">5,972</span><span title="10 gold badges"><span class="badge1"></span><span class="badgecount">10</span></span><span title="44 silver badges"><span class="badge2"></span><span class="badgecount">44</span></span><span title="94 bronze badges"><span class="badge3"></span><span class="badgecount">94</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+
+                
+    <div class="post-layout--right">
+	    <div id="comments-5446594" class="comments js-comments-container ">
+                <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <li id="comment-13096602" class="comment js-comment " data-comment-id="13096602">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I've ended up using Pry, far easier/better.  After inserting into Gemfile and installing, throw "binding.pry" anywhere in your spec, execute, and you're rolling.  See the screen cast for details.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/320619/allyl-isocyanate" title="5,972 reputation" class="comment-user owner">Allyl Isocyanate</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment13096602_5446594"><span title="2012-04-17 21:46:02Z" class="relativetime-clean">Apr 17 '12 at 21:46</span></a></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-16345115" class="comment js-comment " data-comment-id="16345115">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Pry's a great object explorer, but (even with pry-nav) it just doesn't have the debugger features that the debugger gem has. I wish it did, but I've gone back to debugger.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/109011/marnen-laibow-koser" title="4,021 reputation" class="comment-user">Marnen Laibow-Koser</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment16345115_5446594"><span title="2012-08-30 19:15:04Z" class="relativetime-clean">Aug 30 '12 at 19:15</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+                </ul>
+	    </div>
+
+        <div id="comments-link-5446594" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#" onclick=""></a>
+        </div>         
+    </div>        </div>
+</div>
+
+            <div id="answers">
+
+                <a name="tab-top"></a>
+                <div id="answers-header">
+                    <div class="subheader answers-subheader">
+                        <h2 data-answercount="6">
+                                6 Answers
+                                <span style="display:none;" itemprop="answerCount">6</span>
+                        </h2>
+                        <div>
+                            
+<div id="tabs">
+        <a href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere " href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+    </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+  
+<a name="5446825"></a>
+<div id="answer-5446825" class="answer accepted-answer" data-answerid="5446825" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="5446825">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">65</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<p>You will get what you want by including <code>require 'ruby-debug'</code> at the top of your spec:</p>
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="com"># spec/models/user_spec.rb</span><span class="pln">
+require </span><span class="str">'spec_helper'</span><span class="pln">
+require </span><span class="str">'ruby-debug'</span><span class="pln">
+
+describe </span><span class="typ">User</span><span class="pln"> </span><span class="kwd">do</span><span class="pln">
+  it </span><span class="str">"should be valid"</span><span class="pln"> </span><span class="kwd">do</span><span class="pln">
+    debugger
+    </span><span class="typ">User</span><span class="pun">.</span><span class="pln">new</span><span class="pun">.</span><span class="pln">should be_valid
+  </span><span class="kwd">end</span><span class="pln">
+</span><span class="kwd">end</span></code></pre>
+
+<p>You would then run <code>rake spec</code> or <code>rspec</code> as normal</p>
+
+<p><strong>NOTE:</strong> I now prefer Ruby 2.0+ and pry. It is pretty much the same process:</p>
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="pln">require </span><span class="str">'spec_helper'</span><span class="pln">
+require </span><span class="str">'pry-debugger'</span><span class="pln">
+
+describe </span><span class="typ">User</span><span class="pln"> </span><span class="kwd">do</span><span class="pln">
+  it </span><span class="str">"should be valid"</span><span class="pln"> </span><span class="kwd">do</span><span class="pln">
+    binding</span><span class="pun">.</span><span class="pln">pry
+    expect</span><span class="pun">(</span><span class="typ">User</span><span class="pun">.</span><span class="pln">new</span><span class="pun">).</span><span class="pln">to be_valid
+  </span><span class="kwd">end</span><span class="pln">
+</span><span class="kwd">end</span></code></pre>
+
+<p>Also, I generally put requires like this in my spec_helper file, so that pry-debugger is available to all of my specs. </p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/5446825" title="short permalink to this answer" class="short-link" id="link-post-5446825">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/5446825/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://stackoverflow.com/posts/5446825/revisions" title="show all edits to this post">edited <span title="2014-04-17 00:33:42Z" class="relativetime">Apr 17 '14 at 0:33</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-03-27 02:26:48Z" class="relativetime">Mar 27 '11 at 2:26</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/560811/christopher-maujean"><div class="gravatar-wrapper-32"><img src="./Running ruby debug in rspec_ - Stack Overflow_files/99f6660bb1f2cd3021d3da3219705b3b" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/560811/christopher-maujean">Christopher Maujean</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,165</span><span title="8 silver badges"><span class="badge2"></span><span class="badgecount">8</span></span><span title="9 bronze badges"><span class="badge3"></span><span class="badgecount">9</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-5446825" class="comments js-comments-container ">
+                <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <li id="comment-8665270" class="comment js-comment " data-comment-id="8665270">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">A note here: my solution works for adding ruby debugging to one particular spec file, the solution by zetetic enables debugging for the entire project.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/560811/christopher-maujean" title="1,165 reputation" class="comment-user">Christopher Maujean</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment8665270_5446825"><span title="2011-08-26 23:38:31Z" class="relativetime-clean">Aug 26 '11 at 23:38</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-10652505" class="comment js-comment " data-comment-id="10652505">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">The solution doesn't work for me. I get: <b>cannot load such file -- ruby-debug (LoadError)</b></span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/1034080/felix-rabe" title="2,635 reputation" class="comment-user">Felix Rabe</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment10652505_5446825"><span title="2011-12-21 10:49:57Z" class="relativetime-clean">Dec 21 '11 at 10:49</span></a></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-10652925" class="comment js-comment " data-comment-id="10652925">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Re: the above. Needed to uncomment the Gemfile line with the ruby-debug19 gem.  (Put it into :test, :development groups actually.) Works now.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/1034080/felix-rabe" title="2,635 reputation" class="comment-user">Felix Rabe</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment10652925_5446825"><span title="2011-12-21 11:14:36Z" class="relativetime-clean">Dec 21 '11 at 11:14</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-74081964" class="comment js-comment " data-comment-id="74081964">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Depends on the GEM You use for debugging. I use <code>"pry-rails"</code> and <code>"pry-byebug"</code> so I would <code>require 'pry-rails'</code>. Also in the Gemfile they need to be included in the <code>test environment</code></span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/7295772/fabrizio-bertoglio" title="2,229 reputation" class="comment-user">Fabrizio Bertoglio</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment74081964_5446825"><span title="2017-04-20 08:34:47Z" class="relativetime-clean">Apr 20 '17 at 8:34</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+                </ul>
+	    </div>
+
+        <div id="comments-link-5446825" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+<div id="dfp-mlb" class="everyonelovesstackoverflow" data-google-query-id="CJT79MmK-dkCFdFqAQodk1MGlA" data-clc-prefilled="true" data-clc-ready="true"><div id="google_ads_iframe_/248424177/stackoverflow.com/mlb/question-pages_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/248424177/stackoverflow.com/mlb/question-pages_0" title="3rd party ad content" name="google_ads_iframe_/248424177/stackoverflow.com/mlb/question-pages_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; vertical-align: bottom;" src="./Running ruby debug in rspec_ - Stack Overflow_files/saved_resource(1).html"></iframe></div></div>
+  
+<a name="5447359"></a>
+<div id="answer-5447359" class="answer" data-answerid="5447359" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="5447359">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">29</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<p>You can create an <code>.rspec</code> configuration file in the root of your project and include the line:</p>
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="pun">--</span><span class="pln">debug</span></code></pre>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/5447359" title="short permalink to this answer" class="short-link" id="link-post-5447359">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/5447359/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2011-03-27 05:05:00Z" class="relativetime">Mar 27 '11 at 5:05</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/17410/zetetic"><div class="gravatar-wrapper-32"><img src="./Running ruby debug in rspec_ - Stack Overflow_files/1022b779bdc1ddef7cd9d29abd70ed15" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/17410/zetetic">zetetic</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 41,581" dir="ltr">41.6k</span><span title="8 gold badges"><span class="badge1"></span><span class="badgecount">8</span></span><span title="96 silver badges"><span class="badge2"></span><span class="badgecount">96</span></span><span title="105 bronze badges"><span class="badge3"></span><span class="badgecount">105</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-5447359" class="comments js-comments-container ">
+                <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <li id="comment-62220531" class="comment js-comment " data-comment-id="62220531">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><code>invalid option: --debug (defined in ./.rspec)</code></span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/119790/ian-vaughan" title="8,102 reputation" class="comment-user">Ian Vaughan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment62220531_5447359"><span title="2016-05-20 17:26:07Z" class="relativetime-clean">May 20 '16 at 17:26</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-62222999" class="comment js-comment " data-comment-id="62222999">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">yes it seems the --debug option was removed at some point.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/17410/zetetic" title="41,581 reputation" class="comment-user">zetetic</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment62222999_5447359"><span title="2016-05-20 18:46:45Z" class="relativetime-clean">May 20 '16 at 18:46</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+                </ul>
+	    </div>
+
+        <div id="comments-link-5447359" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="12294770"></a>
+<div id="answer-12294770" class="answer" data-answerid="12294770" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="12294770">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">20</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<h2>For Ruby &gt;= 1.9.2</h2>
+
+<p>You should install the <strong><a href="http://github.com/cldwalker/debugger" rel="noreferrer">debugger</a></strong> gem <strong>instead of</strong> ruby-debug19. It you use <a href="http://gembundler.com/" rel="noreferrer">bundler</a>, you just put this in your Gemfile:</p>
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="pln">group </span><span class="pun">:</span><span class="pln">test </span><span class="kwd">do</span><span class="pln">
+  gem </span><span class="str">"debugger"</span><span class="pln">
+</span><span class="kwd">end</span></code></pre>
+
+<p>After that you can just put</p>
+
+<h3>rspec &lt; 3.0</h3>
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="pun">--</span><span class="pln">debug</span></code></pre>
+
+<h3>rspec &gt;= 3.0</h3>
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="pun">-</span><span class="pln">rdebugger</span></code></pre>
+
+<p>in your <code>.rspec</code> file</p>
+
+<p>Then you can just run</p>
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="pln">bundle exec rake spec</span></code></pre>
+
+<p>without any additional arguments. There is <strong>no need to modify your source code</strong> either (not even your test source code)</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/12294770" title="short permalink to this answer" class="short-link" id="link-post-12294770">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/12294770/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://stackoverflow.com/posts/12294770/revisions" title="show all edits to this post">edited <span title="2014-08-14 09:34:18Z" class="relativetime">Aug 14 '14 at 9:34</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-09-06 07:13:40Z" class="relativetime">Sep 6 '12 at 7:13</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/300632/jarl"><div class="gravatar-wrapper-32"><img src="./Running ruby debug in rspec_ - Stack Overflow_files/968fba3ba6e5df2df68a458218be7104" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/300632/jarl">Jarl</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,468</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="16 silver badges"><span class="badge2"></span><span class="badgecount">16</span></span><span title="29 bronze badges"><span class="badge3"></span><span class="badgecount">29</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-12294770" class="comments js-comments-container ">
+                <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <li id="comment-16713045" class="comment js-comment " data-comment-id="16713045">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">3</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">+1 and thanks for pointing that out. There is no code modification to <i>enable</i> the debugger, but you do have to modify your test code to <i>invoke</i> the debugger, exactly as shown at the top of the original question (add a <code>debugger</code> statement). Also, if you run your test with spork, the rdb prompt will appear in the spork console, which doesn't echo what you type in. Seems easiest to run without spork.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/550712/mark-berry" title="8,337 reputation" class="comment-user">Mark Berry</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment16713045_12294770"><span title="2012-09-14 20:08:46Z" class="relativetime-clean">Sep 14 '12 at 20:08</span></a></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-53166082" class="comment js-comment " data-comment-id="53166082">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">3</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">and if you use byebug, then it becomes -rbyebug</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/74074/mcr" title="3,758 reputation" class="comment-user">mcr</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment53166082_12294770"><span title="2015-09-18 19:40:28Z" class="relativetime-clean">Sep 18 '15 at 19:40</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-85153494" class="comment js-comment " data-comment-id="85153494">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">not supported o ruby 2.0+</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/6020034/mdo123" title="552 reputation" class="comment-user">mdo123</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment85153494_12294770"><span title="2018-03-02 17:01:26Z" class="relativetime-clean">Mar 2 at 17:01</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+                </ul>
+	    </div>
+
+        <div id="comments-link-12294770" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="18613751"></a>
+<div id="answer-18613751" class="answer" data-answerid="18613751" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="18613751">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">14</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<p>For ruby 2.0 I use byebug: <a href="https://github.com/deivid-rodriguez/byebug">https://github.com/deivid-rodriguez/byebug</a></p>
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="pln">gem </span><span class="str">'byebug'</span></code></pre>
+
+<p>Code:</p>
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="com"># spec/models/user_spec.rb</span><span class="pln">
+require </span><span class="str">'spec_helper'</span><span class="pln">
+require </span><span class="str">'byebug'</span><span class="pln">
+
+describe </span><span class="typ">User</span><span class="pln"> </span><span class="kwd">do</span><span class="pln">
+  it </span><span class="str">"should be valid"</span><span class="pln"> </span><span class="kwd">do</span><span class="pln">
+    byebug
+    </span><span class="typ">User</span><span class="pun">.</span><span class="pln">new</span><span class="pun">.</span><span class="pln">should be_valid
+  </span><span class="kwd">end</span><span class="pln">
+</span><span class="kwd">end</span></code></pre>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/18613751" title="short permalink to this answer" class="short-link" id="link-post-18613751">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/18613751/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-09-04 12:24:01Z" class="relativetime">Sep 4 '13 at 12:24</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/1827284/drinor"><div class="gravatar-wrapper-32"><img src="./Running ruby debug in rspec_ - Stack Overflow_files/cOtJk.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/1827284/drinor">drinor</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,688</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="18 silver badges"><span class="badge2"></span><span class="badgecount">18</span></span><span title="31 bronze badges"><span class="badge3"></span><span class="badgecount">31</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-18613751" class="comments js-comments-container ">
+                <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <li id="comment-45918429" class="comment js-comment " data-comment-id="45918429">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">For some reason, this solution doesn't work. Passes over the test</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/93311/trip" title="14,484 reputation" class="comment-user">Trip</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment45918429_18613751"><span title="2015-03-03 03:34:18Z" class="relativetime-clean">Mar 3 '15 at 3:34</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-84793223" class="comment js-comment " data-comment-id="84793223">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Trip that's interesting, maybe instead of <code>byebug</code> try adding <code>debugger</code>?</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/914600/botnet" title="1,168 reputation" class="comment-user">BotNet</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment84793223_18613751"><span title="2018-02-20 20:36:31Z" class="relativetime-clean">Feb 20 at 20:36</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+                </ul>
+	    </div>
+
+        <div id="comments-link-18613751" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="10199575"></a>
+<div id="answer-10199575" class="answer" data-answerid="10199575" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="10199575">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">8</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<p>The best way I have found to debug in rSpec is by adding the following to your 'spec_helper.rb' file</p>
+
+
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="kwd">def</span><span class="pln"> logger
+  </span><span class="typ">Rails</span><span class="pun">.</span><span class="pln">logger
+</span><span class="kwd">end</span></code></pre>
+
+<p>You can then access all the logger methods within your rSpec files and incorporate such things as tagged logging. This of course is for Rails 3 and up. If you have anything prior to Rails 3 then add this instead:</p>
+
+
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="kwd">def</span><span class="pln"> logger
+  RAILS_DEFAULT_LOGGER
+</span><span class="kwd">end</span></code></pre>
+
+<p>Once you have your logging statements in place you can enter </p>
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="pln">tail </span><span class="pun">-</span><span class="pln">f log</span><span class="pun">/</span><span class="pln">test</span><span class="pun">.</span><span class="pln">log</span></code></pre>
+
+<p>in your terminal shell in order to watch your logging statements while the tests are run.</p>
+
+<p>Of course in your actual rspec test you would enter something such as</p>
+
+
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="pln">logger</span><span class="pun">.</span><span class="pln">debug </span><span class="str">"#{1.class}"</span><span class="pln">  </span><span class="com"># =&gt; Fixnum</span></code></pre>
+
+<p>If you want to filter your debug statements from the rest of your test log simply prepend a random string on to your debug statement and pipe the output of the tail command to grep.</p>
+
+<p>Example:</p>
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="pln">logger</span><span class="pun">.</span><span class="pln">debug </span><span class="str">"random_string #{1.class}"</span><span class="pln">   </span><span class="com"># =&gt; Fixnum</span><span class="pln">
+
+tail </span><span class="pun">-</span><span class="pln">f log</span><span class="pun">/</span><span class="pln">test</span><span class="pun">.</span><span class="pln">log </span><span class="pun">|</span><span class="pln"> grep random_string</span></code></pre>
+
+<h3>Update</h3>
+
+<p>I've changed my opinion on this. You should install pry, pry-doc, and pry-debug, pry-debugger, and pry-rails. Then use binding.pry in your code to open an interactive debugger console that rules the world!</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/10199575" title="short permalink to this answer" class="short-link" id="link-post-10199575">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/10199575/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+    <div class="post-signature grid--cell fl0">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="https://stackoverflow.com/posts/10199575/revisions" title="show all edits to this post">edited <span title="2014-03-07 23:34:57Z" class="relativetime">Mar 7 '14 at 23:34</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2012-04-17 21:38:37Z" class="relativetime">Apr 17 '12 at 21:38</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/402520/odee-odum"><div class="gravatar-wrapper-32"><img src="./Running ruby debug in rspec_ - Stack Overflow_files/caa9c447547d8560335a7bd1c3649072" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/402520/odee-odum">Odee Odum</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">352</span><span title="4 silver badges"><span class="badge2"></span><span class="badgecount">4</span></span><span title="14 bronze badges"><span class="badge3"></span><span class="badgecount">14</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-10199575" class="comments js-comments-container ">
+                <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <li id="comment-15336934" class="comment js-comment " data-comment-id="15336934">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Huge +1, this is a really great tip</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/589248/hoitomt" title="481 reputation" class="comment-user">hoitomt</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment15336934_10199575"><span title="2012-07-21 04:35:48Z" class="relativetime-clean">Jul 21 '12 at 4:35</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-15586833" class="comment js-comment " data-comment-id="15586833">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This did not answer the question.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/201828/phatmann" title="13,220 reputation" class="comment-user">phatmann</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment15586833_10199575"><span title="2012-07-31 15:21:06Z" class="relativetime-clean">Jul 31 '12 at 15:21</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-15618511" class="comment js-comment " data-comment-id="15618511">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">phatmann, this is the most correct way in Rails 3 to allow for logging in rspec tests. Once you have added the method to your spec_helper.rb file you can then log debug statements by using   <code>logger.debug "#{1.class}"</code>  If you want you can prepend a random string to your debug statement and pipe the output of the tail command to grep in order to filter your debugging statements.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/402520/odee-odum" title="352 reputation" class="comment-user">Odee Odum</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment15618511_10199575"><span title="2012-08-01 15:58:18Z" class="relativetime-clean">Aug 1 '12 at 15:58</span></a></span>
+                        <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-16345151" class="comment js-comment " data-comment-id="16345151">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Downvoting. The OP was asking about debugger breakpoints, not logging (which isn't the greatest idea in specs anyway).</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/109011/marnen-laibow-koser" title="4,021 reputation" class="comment-user">Marnen Laibow-Koser</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment16345151_10199575"><span title="2012-08-30 19:16:35Z" class="relativetime-clean">Aug 30 '12 at 19:16</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+    <li id="comment-26363906" class="comment js-comment " data-comment-id="26363906">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+            </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Downvoting, for same reason as @MarnenLaibow-Koser.  May be useful info, but doesn't answer the OP's actual question.</span>
+                    –&nbsp;<a href="https://stackoverflow.com/users/222602/denishaskin" title="1,145 reputation" class="comment-user">denishaskin</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#comment26363906_10199575"><span title="2013-08-02 19:46:49Z" class="relativetime-clean">Aug 2 '13 at 19:46</span></a></span>
+                                                                            </div>
+        </div>
+    </li>
+                </ul>
+	    </div>
+
+        <div id="comments-link-10199575" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+
+  
+<a name="24473069"></a>
+<div id="answer-24473069" class="answer" data-answerid="24473069" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+            <div class="votecell post-layout--left">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="24473069">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </div>
+            
+
+
+<div class="answercell post-layout--right">
+    <div class="post-text" itemprop="text">
+<p>The best and cleanest option is to use <code>--require</code> in your <code>.rspec</code> file.  What you put depends on which gem you use for debugging.</p>
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="pun">--</span><span class="pln">color
+</span><span class="pun">--</span><span class="pln">require pry
+</span><span class="pun">--</span><span class="pln">require rails_helper</span></code></pre>
+
+<p>These correspond to command line options (-d or --debug is now deprecated).</p>
+
+<p>Feel free to use <code>debugger</code>, <code>ruby-debug</code> or <code>pry</code> (pry-rails in your Gemfile).</p>
+
+<p>For your Gemfile:</p>
+
+<pre class="lang-rb prettyprint prettyprinted" style=""><code><span class="pln">group </span><span class="pun">:</span><span class="pln">test</span><span class="pun">,</span><span class="pln"> </span><span class="pun">:</span><span class="pln">development </span><span class="kwd">do</span><span class="pln">
+  gem </span><span class="str">'pry-rails'</span><span class="pln">
+</span><span class="kwd">end</span></code></pre>
+
+<p>Putting <code>require 'ruby-debug'</code> etc. at the top of your spec is simply more tightly coupled -- especially since here the top voted comment suggests putting it individually in ALL your files. With the new <code>.rspec</code> file you shouldn't need to put <code>require 'spec_helper'</code> or <code>require 'rails_helper'</code> at the top of your files anymore.</p>
+
+<p>They make more sense as implicit command line arguments.</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+    <div class="grid--cell mr16" style="flex: 1 1 100px;">
+<div class="post-menu"><a href="https://stackoverflow.com/a/24473069" title="short permalink to this answer" class="short-link" id="link-post-24473069">share</a><span class="lsep">|</span><a href="https://stackoverflow.com/posts/24473069/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </div>
+            
+
+
+    <div class="post-signature grid--cell fl0">
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2014-06-29 04:05:35Z" class="relativetime">Jun 29 '14 at 4:05</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://stackoverflow.com/users/845413/ryan-taylor"><div class="gravatar-wrapper-32"><img src="./Running ruby debug in rspec_ - Stack Overflow_files/F6eYZ.png" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://stackoverflow.com/users/845413/ryan-taylor">Ryan Taylor</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">3,640</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="21 silver badges"><span class="badge2"></span><span class="badgecount">21</span></span><span title="21 bronze badges"><span class="badge3"></span><span class="badgecount">21</span></span>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+</div>
+    
+    <div class="post-layout--right">
+	    <div id="comments-24473069" class="comments js-comments-container  dno">
+                <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                </ul>
+	    </div>
+
+        <div id="comments-link-24473069" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#" onclick=""></a>
+        </div>         
+    </div>    </div>
+</div>
+                                    <a name="new-answer"></a>
+                        <form id="post-form" action="https://stackoverflow.com/questions/5446594/answer/submit" method="post" class="post-form">
+                            <input type="hidden" id="post-id" value="5446594">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.com/">
+                            <h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                StackExchange.prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                showLowRepImageUploadWarning: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;"> 
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="752176a9ea30835aad5d93317ccdb7df5a42b2a1f33e237c746ee7fb6a95402a">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+
+                            <div style="position: relative;">
+                                
+                                            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="https://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2fstackoverflow.com%2fquestions%2f5446594%2frunning-ruby-debug-in-rspec%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login" data-ga="[&quot;Sign Up&quot;,&quot;Sign Up Started - Google&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon native iconGoogle" width="18" height="18" viewBox="0 0 18 18"><g><path d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 0 0 2.38-5.88c0-.57-.05-.66-.15-1.18z" fill="#4285F4"></path><path d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 0 1-7.18-2.54H1.83v2.07A8 8 0 0 0 8.98 17z" fill="#34A853"></path><path d="M4.5 10.52a4.8 4.8 0 0 1 0-3.04V5.41H1.83a8 8 0 0 0 0 7.18l2.67-2.07z" fill="#FBBC05"></path><path d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 0 0 1.83 5.4L4.5 7.49a4.77 4.77 0 0 1 4.48-3.3z" fill="#EA4335"></path></g></svg> Sign up using Google
+                        </div>
+                        <div class="preferred-login facebook-login" data-ga="[&quot;Sign Up&quot;,&quot;Sign Up Started - Facebook&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18" viewBox="0 0 18 18"><path d="M1.88 1C1.4 1 1 1.4 1 1.88v14.24c0 .48.4.88.88.88h7.67v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h4.08c.48 0 .88-.4.88-.88V1.88c0-.48-.4-.88-.88-.88H1.88z" fill="#3C5A96"></path></svg> Sign up using Facebook
+                        </div>
+                        <div class="preferred-login stackexchange-login" data-ga="[&quot;Sign Up&quot;,&quot;Sign Up Navigation&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon native iconLogoGlyphXSm" width="18" height="18" viewBox="0 0 18 18"><g><path fill="#BCBBBB" d="M14 16v-5h2v7H2v-7h2v5z"></path><path d="M5 15v-2h8v2H5zM12.09.72l4.5 6.06-1.2.9-4.51-6.06 1.21-.9zM8.34 4.3l.97-1.16 5.8 4.83-.96 1.16-5.8-4.83zm-1.9 3.36l.64-1.37 6.85 3.19-.63 1.37-6.85-3.2zM5.4 11.39l.38-1.67 7.42 1.48-.22 1.46-7.58-1.27z" fill="#F48024"></path></g></svg> Sign up using Email and Password
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'https%3a%2f%2fstackoverflow.com%2fquestions%2f5446594%2frunning-ruby-debug-in-rspec%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+
+                            </div>
+
+                                                            <div class="form-submit cbt">
+                                        <input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+                                    <a href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="https://stackexchange.com/legal/privacy-policy" name="privacy" target="_blank">privacy policy</a> and <a href="https://stackexchange.com/legal/terms-of-service" name="tos" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">                                </div>
+                        </form>
+
+
+
+                        <h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?                            Browse other questions tagged <a href="https://stackoverflow.com/questions/tagged/ruby-on-rails" class="post-tag" title="show questions tagged &#39;ruby-on-rails&#39;" rel="tag">ruby-on-rails</a> <a href="https://stackoverflow.com/questions/tagged/rspec" class="post-tag" title="show questions tagged &#39;rspec&#39;" rel="tag">rspec</a> <a href="https://stackoverflow.com/questions/tagged/rake" class="post-tag" title="show questions tagged &#39;rake&#39;" rel="tag">rake</a> <a href="https://stackoverflow.com/questions/tagged/ruby-debug" class="post-tag" title="show questions tagged &#39;ruby-debug&#39;" rel="tag">ruby-debug</a>  or <a href="https://stackoverflow.com/questions/ask">ask your own question</a>.                        </h2>
+            </div>
+        </div>
+                <div id="sidebar" class="show-votes" role="complementary" aria-label="sidebar">
+                            <div class="module question-stats">
+                    <table id="qinfo">
+                        <tbody><tr>
+                            <td>
+                                <p class="label-key">asked</p>
+                            </td>
+                            <td style="padding-left: 10px">
+                                <p class="label-key" title="2011-03-27 01:28:54Z"><b>6 years, 11 months ago</b></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="label-key">viewed</p>
+                            </td>
+
+                            <td style="padding-left: 10px">
+                                <p class="label-key">
+                                    <b>46,127 times</b>
+                                </p>
+                            </td>
+                        </tr>
+                            <tr>
+                                <td>
+                                    <p class="label-key">active</p>
+                                </td>
+                                <td style="padding-left: 10px">
+                                    <p class="label-key"><b><a href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec?lastactivity" class="lastactivity-link" title="2017-06-14 15:20:38Z">9 months ago</a></b></p>
+                                </td>
+                            </tr>
+                    </tbody></table>
+                </div>
+            <div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Upcoming Events
+                </div>
+                <hr>
+    <div class="spacer bulletin-item-important">
+        
+    <div class="bulletin-item-type"><a href="https://stackoverflow.com/election?cb=1" class="question-hyperlink" data-ga="[&quot;Community Bulletin Board&quot;,&quot;Upcoming Events&quot;,&quot;https://stackoverflow.com/election&quot;,null,null]"><div class="favicon favicon-stackoverflow" title="Stack Overflow"></div></a></div>
+    <div class="bulletin-item-content">
+        <a href="https://stackoverflow.com/election?cb=1" class="question-hyperlink" data-ga="[&quot;Community Bulletin Board&quot;,&quot;Upcoming Events&quot;,&quot;https://stackoverflow.com/election&quot;,null,null]">2018 Community Moderator Election</a>
+        <div>ends <span title="2018-03-27 20:00:00Z" class="relativetime">in 8 days</span></div>
+    </div>
+    <br class="cbt">
+</div>
+    </div>
+</div>            
+<div id="dfp-tsb" class="everyonelovesstackoverflow" data-clc-stalled="true" data-google-query-id="CJX79MmK-dkCFdFqAQodk1MGlA" style=""><div id="google_ads_iframe_/248424177/stackoverflow.com/sb/question-pages_0__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 250px;"><iframe frameborder="0" src="./Running ruby debug in rspec_ - Stack Overflow_files/container.html" id="google_ads_iframe_/248424177/stackoverflow.com/sb/question-pages_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="250" data-is-safeframe="true" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+            <div id="hireme"></div>
+<script>;window.clc=window.clc||{},window.clc.init=window.clc.init||function(a){var b=window,c=b.document;try{if('function'!=typeof[].indexOf||!window.addEventListener||!a.allowed)return;var d=new RegExp(a.allowed);if(!d.test(location.hostname))return;if(b.clc.options)for(var e in b.clc.options)a[e]=b.clc.options[e];b.clc.cmd='undefined'==typeof b.clc.cmd?[]:b.clc.cmd,b.clc.autoload=b.clc.autoload||function(){'function'==typeof b.clc.load?b.clc.load():b.clc.cmd.push(function(a){a.load()})};var f=a.wv;if(c.hidden&&f)return void c.addEventListener('visibilitychange',function b(){c.hidden||(window.clc.init(a),c.removeEventListener('visibilitychange',b))});b.clc.options=a,a.al&&b.clc.autoload();var g=/Trident/i.test(navigator.userAgent)?a.lib.replace(/(\.min)?\.js(\?v=[0-9a-fA-F]+)?$/,'.ie$1.js$2'):a.lib,h=c.createElement('script');h.async=!0,h.src=g,c.body.appendChild(h)}catch(a){}},window.clc.loadDisplayAds=window.clc.loadDisplayAds||function(){function a(b){b.style.height=b.style.maxHeight=b.style.minHeight='auto',b.style.display='IFRAME'===b.tagName?'none':'block',[].forEach.call(b.children,a)}function b(a){new Image().src='https://'+e+'/stalled.gif?'+a}var c=window,d=c.document,e="clc.stackoverflow.com",f={slots:{lb:[[728,90]],mlb:[[728,90]],sb:[[300,250],[300,600]],"tag-sponsorship":[[730,135]]},ids:{"dfp-tlb":'lb',"dfp-mlb":'mlb',"dfp-tsb":'sb',"dfp-tag":'tag-sponsorship',"clc-tlb":'lb',"clc-mlb":'mlb',"clc-tsb":'sb'}},g=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?'tag-pages':'question-pages',h=location.hostname;/^clc\./.test(location.hostname)&&(h='test/dev.stackoverflow.com');var i=[4385506061,4386578282,4386579572];return function(e){var j=(e&&0<e.length?e:Object.keys(f.ids)).map(function(a){return d.getElementById(a)}).filter(function(a){return!!a&&/^\s*$/.test(a.innerHTML)}).map(function(a){return a.id});if(0!==j.length){c.googletag=c.googletag||{},c.googletag.cmd=c.googletag.cmd||[],c.googletag.cmd.push(function(){var e=c.googletag,k=d.createElement('div');k.className='adsbox',k.id='clc-abd',k.style.position='absolute',k.style.pointerEvents='none',k.innerHTML='&nbsp;',d.body.appendChild(k);var l=e.pubads();l.enableSingleRequest(),l.addEventListener('slotRenderEnded',function(c){var e=c.serviceName,f=c.slot,g=c.lineItemId;try{var h=f.getSlotElementId(),j=[];h||j.push('id=0');var k=d.getElementById(h);if(!h||k?k.hasAttribute('data-clc-stalled')&&j.push('st=1'):j.push('el=0'),0!==j.length)return void b(j.join('&'));-1===i.indexOf(g)?k.setAttribute('data-clc-prefilled','true'):a(k),k.setAttribute('data-clc-ready','true')}catch(a){var l=d.getElementById('dfp-tsb')||d.getElementById('clc-tsb');l&&l.setAttribute('data-clc-ready','true'),b('e=1')}});var m=c.dfp_targeting||{};m&&Object.keys(m).forEach(function(a){l.setTargeting(a,m[a])});for(var n=0,o=j;n<o.length;n++){var p=o[n],q=f.ids[p],r=f.slots[q],s='/'+'248424177'+'/'+h+'/'+q+'/'+g,t=e.defineSlot(s,r,p);('tag-sponsorship'===q||'sb'==q)&&t.setCollapseEmptyDiv(!0,!0),t.addService(l),!1}e.enableServices();for(var p,u=0,v=j;u<v.length;u++)p=v[u],e.display(p)});var k=d.createElement('script');k.async=!0,k.src='https://www.googletagservices.com/tag/js/gpt.js',document.body.appendChild(k)}}}(),window.clc.init.call(null, {"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=f8824d465ad6","style":"https://cdn.sstatic.net/clc/styles/clc.min.css?v=905391554886","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false});</script>            <script>
+window.clc_request='Ag2G9pLMjdUIAAAAAMIbUwACAAAAAgAAAAAlAAAAfHJ1Ynktb24tcmFpbHN8cnNwZWN8cmFrZXxydWJ5LWRlYnVnfACUtX4J3ybohhTL';                    clc.autoload();
+                var dfp_targeting={Registered:['false'],'so-tag':['ruby-on-rails','rspec','rake','ruby-debug'],Persona:['FrontEnd']};                                    clc.loadDisplayAds();
+            </script><div class="module" id="chat-feature">
+
+    <h4><a href="http://chat.stackoverflow.com/" id="h-chat-link" title="106 users active in 51 rooms the last 60 minutes">106 People Chatting</a></h4>
+    <div class="related" id="ad502-rooms"><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="JavaScript"><a href="http://chat.stackoverflow.com/rooms/17">JavaScript</a></span></h3><span title="2018-03-19 18:17:52Z" class="ad502-last-message">49 mins ago - <a href="http://chat.stackoverflow.com/users/829835">rlemon</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/829835"><img height="23" width="23" title="rlemon: 49 mins ago" src="./Running ruby debug in rspec_ - Stack Overflow_files/TteD0.jpg"></a><a href="http://chat.stackoverflow.com/users/129032"><img height="23" width="23" title="ssube: 49 mins ago" src="./Running ruby debug in rspec_ - Stack Overflow_files/e8bea8f9e6972dfd3113d67da68e6933"></a><a href="http://chat.stackoverflow.com/users/785745"><img height="23" width="23" title="Kendall Frey: 50 mins ago" src="./Running ruby debug in rspec_ - Stack Overflow_files/f9fc3249a341a64ee2721637915cd301"></a><a href="http://chat.stackoverflow.com/users/617762"><img height="23" width="23" title="Zirak: 50 mins ago" src="./Running ruby debug in rspec_ - Stack Overflow_files/348d335cd13298e475eeaefa1841dee6"></a><a href="http://chat.stackoverflow.com/users/956900"><img height="23" width="23" title="Luggage: 50 mins ago" src="./Running ruby debug in rspec_ - Stack Overflow_files/4416acf0ee6259443ee3cca16d894d14"></a><a href="http://chat.stackoverflow.com/users/774078"><img height="23" width="23" title="Sterling Archer: 56 mins ago" src="./Running ruby debug in rspec_ - Stack Overflow_files/V2VL3.png"></a><a href="http://chat.stackoverflow.com/users/1596138"><img height="23" width="23" title="user1596138: 58 mins ago" src="./Running ruby debug in rspec_ - Stack Overflow_files/B56wf.jpg"></a></div></div><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="SO Close Vote Reviewers"><a href="http://chat.stackoverflow.com/rooms/41570">SO Close Vote Reviewers</a></span></h3><span title="2018-03-19 18:18:02Z" class="ad502-last-message">48 mins ago - <a href="http://chat.stackoverflow.com/users/499214">John Dvorak</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/499214"><img height="23" width="23" title="John Dvorak: 48 mins ago" src="./Running ruby debug in rspec_ - Stack Overflow_files/PObJM.png"></a><a href="http://chat.stackoverflow.com/users/5277820"><img height="23" width="23" title="dur: 48 mins ago" src="./Running ruby debug in rspec_ - Stack Overflow_files/84da64021a7ec09b61babfb065bc3dac"></a><a href="http://chat.stackoverflow.com/users/8751754"><img height="23" width="23" title="Ron: 49 mins ago" src="./Running ruby debug in rspec_ - Stack Overflow_files/8eYgw.png"></a><a href="http://chat.stackoverflow.com/users/758133"><img height="23" width="23" title="Martin James: 50 mins ago" src="./Running ruby debug in rspec_ - Stack Overflow_files/W8X5E.jpg"></a><a href="http://chat.stackoverflow.com/users/4774918"><img height="23" width="23" title="Olaf: 53 mins ago" src="./Running ruby debug in rspec_ - Stack Overflow_files/kQQAl.jpg"></a><a href="http://chat.stackoverflow.com/users/6373379"><img height="23" width="23" title="FireAlarm: 54 mins ago" src="./Running ruby debug in rspec_ - Stack Overflow_files/YQ7SJ.jpg"></a><a href="http://chat.stackoverflow.com/users/2370483"><img height="23" width="23" title="Machavity: 58 mins ago" src="./Running ruby debug in rspec_ - Stack Overflow_files/c11f2b4035a85ed55486ef537d546e92"></a></div></div></div>
+    <script>
+    // <!--
+        StackExchange.ready(
+        function () {
+            var options = {
+                chatUrl: 'http://chat.stackoverflow.com',
+                reloadUrl: '/api/recent-chat',
+                preloadData: {"activeUsers":106,"activeRooms":51,"rooms":[{"name":"JavaScript","id":17,"lastPost":1521483472,"posts":4650164,"users":[{"name":"rlemon","id":829835,"emailhash":"!https://i.stack.imgur.com/TteD0.jpg?s=128\u0026g=1","lastPost":1521483472},{"name":"ssube","id":129032,"emailhash":"e8bea8f9e6972dfd3113d67da68e6933","lastPost":1521483420},{"name":"Kendall Frey","id":785745,"emailhash":"f9fc3249a341a64ee2721637915cd301","lastPost":1521483404},{"name":"Zirak","id":617762,"emailhash":"348d335cd13298e475eeaefa1841dee6","lastPost":1521483389},{"name":"Luggage","id":956900,"emailhash":"4416acf0ee6259443ee3cca16d894d14","lastPost":1521483385},{"name":"Sterling Archer","id":774078,"emailhash":"!https://i.stack.imgur.com/V2VL3.png?s=128\u0026g=1","lastPost":1521483031},{"name":"user1596138","id":1596138,"emailhash":"!https://i.stack.imgur.com/B56wf.jpg?s=128\u0026g=1","lastPost":1521482924}],"messages":[{"date":1521483472,"user":"rlemon","userid":829835}],"singleImage":false,"tags":["ecmascript","ecmascript-6","javascript","nodejs"]},{"name":"SO Close Vote Reviewers","id":41570,"lastPost":1521483482,"posts":791809,"users":[{"name":"John Dvorak","id":499214,"emailhash":"!https://i.stack.imgur.com/PObJM.png?s=128\u0026g=1","lastPost":1521483482},{"name":"dur","id":5277820,"emailhash":"84da64021a7ec09b61babfb065bc3dac","lastPost":1521483476},{"name":"Ron","id":8751754,"emailhash":"!https://i.stack.imgur.com/8eYgw.png?s=128\u0026g=1","lastPost":1521483437},{"name":"Martin James","id":758133,"emailhash":"!https://i.stack.imgur.com/W8X5E.jpg?s=128\u0026g=1","lastPost":1521483396},{"name":"Olaf","id":4774918,"emailhash":"!https://i.stack.imgur.com/kQQAl.jpg?s=128\u0026g=1","lastPost":1521483179},{"name":"FireAlarm","id":6373379,"emailhash":"!https://i.stack.imgur.com/YQ7SJ.jpg?s=128\u0026g=1","lastPost":1521483171},{"name":"Machavity","id":2370483,"emailhash":"c11f2b4035a85ed55486ef537d546e92","lastPost":1521482882}],"messages":[{"date":1521483482,"user":"John Dvorak","userid":499214}],"singleImage":false,"tags":["discussion","moderation","review"]}]} 
+            };
+
+            StackExchange.chatAd.init(options);
+        });
+    // -->
+    </script>
+
+</div>
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/9155681?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">3</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/9155681/rails-3-2-0-rspec-debugger-not-working?noredirect=1&amp;lq=1" class="question-hyperlink">Rails 3.2.0 rspec debugger not working</a>
+</div>
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/10530138?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/10530138/breakpoints-in-methods-during-rspec-tests?noredirect=1&amp;lq=1" class="question-hyperlink">breakpoints in methods during rspec tests</a>
+</div>
+<div class="spacer">
+	<a href="https://stackoverflow.com/q/14372205?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="https://stackoverflow.com/questions/14372205/how-do-i-print-the-description-of-every-rspec-to-the-rails-logger?noredirect=1&amp;lq=1" class="question-hyperlink">how do i print the description of every rspec to the Rails.logger?</a>
+</div>			</div>
+</div>
+
+                <div class="module sidebar-related">
+                    <h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/2624873?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://stackoverflow.com/questions/2624873/rspec-returns-nothing?rq=1" class="question-hyperlink">rspec returns nothing</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/3275373?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="https://stackoverflow.com/questions/3275373/debugging-rspec-with-ruby1-9-and-netbeans?rq=1" class="question-hyperlink">Debugging rspec with ruby1.9 and netbeans</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/4062925?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">36</div></a><a href="https://stackoverflow.com/questions/4062925/ruby-debug-install-error-failed-to-build-gem-native-extension?rq=1" class="question-hyperlink">ruby-debug install error: failed to build gem native extension</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/4337044?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">11</div></a><a href="https://stackoverflow.com/questions/4337044/trying-to-use-rspec-but-getting-an-error-that-rspec-core-2-2-1-has-been-activat?rq=1" class="question-hyperlink">Trying to use rspec, but getting an error that rspec-core 2.2.1 has been activated, but my Gemfile requires rspec-core 2.1.0</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/5045867?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">15</div></a><a href="https://stackoverflow.com/questions/5045867/ruby-debug-no-such-file-to-load-spec-helper?rq=1" class="question-hyperlink">Ruby Debug “no such file to load --spec_helper”</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/7245284?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://stackoverflow.com/questions/7245284/validate-presence-of-telephone-number-rspec?rq=1" class="question-hyperlink">Validate presence of telephone number Rspec</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/9122232?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">14</div></a><a href="https://stackoverflow.com/questions/9122232/how-do-i-install-ruby-debug-in-ruby-1-9-3-rails-3-2-1?rq=1" class="question-hyperlink">how do I install ruby-debug in ruby 1.9.3 / Rails 3.2.1</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/15855334?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">0</div></a><a href="https://stackoverflow.com/questions/15855334/rspec-model-validation?rq=1" class="question-hyperlink">Rspec model validation</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/28611232?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="https://stackoverflow.com/questions/28611232/rspec-rails-2-1-6-stops-working-in-ruby-2-for-some-reason?rq=1" class="question-hyperlink">rspec-rails 2.1.6 stops working in Ruby 2 for some reason</a></div><div class="spacer js-gps-track"><a href="https://stackoverflow.com/q/31654774?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://stackoverflow.com/questions/31654774/rspec-core-ruby-on-rails?rq=1" class="question-hyperlink">rspec core Ruby on Rails</a></div>
+                    </div>
+                </div>
+
+<div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="https://mathematica.stackexchange.com/questions/169286/cant-understand-one-paragraph-in-power-programming-with-mathematica" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can't understand one paragraph in Power Programming with Mathematica
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="https://aviation.stackexchange.com/questions/49610/why-does-flying-not-have-any-age-restrictions-like-driving-does" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does flying not have any age restrictions like driving does?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="https://puzzling.stackexchange.com/questions/62177/which-historical-person-am-i" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Which historical person am I
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-askubuntu" title="Ask Ubuntu"></div><a href="https://askubuntu.com/questions/1017309/fallocate-vs-dd-for-swapfile" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:89 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    fallocate vs dd for swapfile?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="https://mathoverflow.net/questions/295553/complete-intersections-in-toric-varieties" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Complete intersections in toric varieties
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-homebrew" title="Homebrewing Stack Exchange"></div><a href="https://homebrew.stackexchange.com/questions/22671/diluting-beer-after-11-hours-of-fermentation-what-to-expect" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:156 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Diluting beer after 11 hours of fermentation. What to expect?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="https://puzzling.stackexchange.com/questions/62148/your-first-guess-is-wrong" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Your first guess is wrong
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/159518/what-is-my-exponential-potential" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is my exponential potential?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="https://superuser.com/questions/1305571/is-there-a-single-uac-binary" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there a single UAC binary?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/118739/how-fast-is-travel-in-the-ethereal-plane" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How fast is travel in the Ethereal Plane?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="https://english.stackexchange.com/questions/437069/why-and-when-did-downs-syndrome-change-to-down-syndrome" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why and when did 'Down's Syndrome' change to 'Down Syndrome'?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-space" title="Space Exploration Stack Exchange"></div><a href="https://space.stackexchange.com/questions/26092/why-are-the-bottom-of-most-stages-flat" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:508 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why are the bottom of most stages flat?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="https://english.stackexchange.com/questions/437227/why-is-it-rhine-but-rhenish" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is it "Rhine", but "Rhenish"?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="https://math.stackexchange.com/questions/2698554/do-it-without-the-formula-of-the-surface-area-of-a-triangle" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do it without the formula of the surface area of a triangle.
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-outdoors" title="The Great Outdoors Stack Exchange"></div><a href="https://outdoors.stackexchange.com/questions/18740/my-car-broke-down-in-siberia-what-do-i-do-now" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:395 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    My car broke down in Siberia. What do I do now?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-graphicdesign" title="Graphic Design Stack Exchange"></div><a href="https://graphicdesign.stackexchange.com/questions/106946/why-is-photoshop-changing-my-cmyk-numbers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:174 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is Photoshop changing my CMYK numbers?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/11982/i-dreamed-you-did-so-and-so-why-did-you-do-that-how-to-react" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    I dreamed you did so and so. Why did you do that? - How to react?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="https://puzzling.stackexchange.com/questions/62159/whats-the-theme-here-3" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What's the theme here? (#3)
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-interpersonal" title="Interpersonal Skills Stack Exchange"></div><a href="https://interpersonal.stackexchange.com/questions/11853/my-fianc%c3%a9e-is-addicted-to-a-free-to-play-pay-to-win-game" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:680 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    My fiancée is addicted to a "free-to-play" (pay-to-win) game
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="https://ell.stackexchange.com/questions/160867/move-one-seat-right-or-move-to-one-seat-right-or-move-one-seat-to-right" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Move one seat right or Move to one seat right or Move one seat to right
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="https://diy.stackexchange.com/questions/135814/can-i-wallpaper-over-spackle" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can I wallpaper over spackle?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-boardgames" title="Board &amp; Card Games Stack Exchange"></div><a href="https://boardgames.stackexchange.com/questions/41595/how-does-the-innistrad-no-spells-two-or-more-spells-cast-last-turn-transform" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:147 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How does the Innistrad "no spells / two or more spells cast last turn" transform trigger work?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="https://unix.stackexchange.com/questions/432002/after-accidentally-renaming-usr-how-do-i-rename-it-back" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    After accidentally renaming /usr, how do I rename it back?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-sitecore" title="Sitecore Stack Exchange"></div><a href="https://sitecore.stackexchange.com/questions/10888/update-fields-using-sitecore-powershell-extensions" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:664 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Update fields using Sitecore Powershell Extensions
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+
+<div id="feed-link">
+    <a href="https://stackoverflow.com/feeds/question/5446594" title="feed of this question and its answers">
+        <svg aria-hidden="true" class="svg-icon fc-orange-400 iconRss" width="18" height="18" viewBox="0 0 18 18"><path d="M1 3c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3zm14.5 12C15.5 8.1 9.9 2.5 3 2.5V5a10 10 0 0 1 10 10h2.5zm-5 0A7.5 7.5 0 0 0 3 7.5V10a5 5 0 0 1 5 5h2.5zm-5 0A2.5 2.5 0 0 0 3 12.5V15h2.5z"></path></svg>
+        question feed
+    </a>
+</div>
+        </div>
+    </div>
+<script>StackExchange.ready(function(){$.get('/posts/5446594/ivc/081d');});</script>
+<noscript>&lt;div&gt;&lt;img src="/posts/5446594/ivc/081d" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;</noscript><div style="display:none" id="prettify-lang">lang-rb</div></div>
+
+
+        </div>
+    </div><script async="" src="./Running ruby debug in rspec_ - Stack Overflow_files/clc.min.js"></script><script async="" src="./Running ruby debug in rspec_ - Stack Overflow_files/gpt.js"></script>
+
+    <footer id="footer" class="site-footer js-footer" role="contentinfo">
+        <div class="site-footer--container">
+                <div class="site-footer--logo">
+
+                    <a href="https://stackoverflow.com/"><svg aria-hidden="true" class="svg-icon native iconLogoGlyphMd" width="32" height="37" viewBox="0 0 32 37"><g><path fill="#BCBBBB" d="M26 33v-9h4v13H0V24h4v9z"></path><path d="M23.1 25.99l.68-2.95-16.1-3.35L7 23l16.1 2.99zM9.1 15.2l15 7 1.4-3-15-7-1.4 3zm4.2-7.4L26 18.4l2.1-2.5L15.4 5.3l-2.1 2.5zM21.5 0l-2.7 2 9.9 13.3 2.7-2L21.5 0zM7 30h16v-3H7v3z" fill="#F48024"></path></g></svg></a>
+                </div>
+            
+            <nav class="site-footer--nav">
+                    <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                        <h5 class="-title"><a href="https://stackoverflow.com/" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://stackoverflow.com/questions" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 16})">Questions</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Jobs</a></li>
+                                <li class="-item"><a href="https://stackoverflow.com/jobs/directory/developer-jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 11})">Developer Jobs Directory</a></li>
+                                     <li class="-item"><a href="https://stackoverflow.com/jobs/salary" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 28})">Salary Calculator</a></li>
+                                                            <li class="-item"><a href="https://stackoverflow.com/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Help</a></li>
+                                <li class="-item"><a onclick="StackExchange.switchMobile(&quot;on&quot;)" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Mobile</a></li>
+                        </ul>
+                    </div>
+                    <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                        <h5 class="-title"><a href="https://www.stackoverflowbusiness.com/?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation&amp;utm_term=sotob2b-footer-business-category" class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow<br> Business</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/talent?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation&amp;utm_term=sotob2b-footer-talent" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 20 })">Talent</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/advertise?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation&amp;utm_term=sotob2b-footer-advertise" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 21 })">Ads</a></li>
+                            <li class="-item"><a href="https://www.stackoverflowbusiness.com/enterprise?utm_source=so-footer&amp;utm_medium=referral&amp;utm_campaign=brand-activation&amp;utm_term=sotob2b-footer-enterprise" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 22 })">Enterprise</a></li>
+                        </ul>
+                    </div>
+                <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Company</a></h5>
+                    <ul class="-list">
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">About</a></li>
+                                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Press</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 9 })" href="https://stackoverflow.com/company/work-here">Work Here</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackexchange.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackexchange.com/legal/privacy-policy">Privacy Policy</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://stackoverflow.com/company/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer--col site-footer--categories-nav site-footer--col__visible">
+                    <a href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#" class="site-footer--back js-footer-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7z"></path></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com/">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/questions/5446594/running-ruby-debug-in-rspec#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="site-footer--categories">
+                    <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="https://stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="https://serverfault.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="https://superuser.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="https://askubuntu.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://tex.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="https://unix.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="https://apple.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="https://gis.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://android.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="https://security.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="https://dba.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="https://ux.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                <li class="-item"><a href="https://pt.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="programadores profissionais e entusiastas">Stack Overflow em Português</a></li>
+                <li class="-item"><a href="https://blender.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="https://networkengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://magento.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                <li class="-item"><a href="https://softwarerecs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="https://emacs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="https://ru.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="программистов">Stack Overflow на русском</a></li>
+                <li class="-item"><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="programming puzzle enthusiasts and code golfers">Programming Puzzles &amp; Code Golf</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://es.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="programadores y profesionales de la informática">Stack Overflow en español</a></li>
+                <li class="-item"><a href="https://ethereum.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="https://datascience.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                <li class="-item"><a href="https://arduino.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                <li class="-item"><a href="https://bitcoin.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Bitcoin crypto-currency enthusiasts">Bitcoin</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 26 })">
+                        <strong>
+                            more (28)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="https://photo.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="https://movies.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="https://music.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="https://worldbuilding.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://diy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="https://money.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="https://academia.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="https://law.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 26 })">
+                        <strong>
+                            more (15)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="https://english.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="https://travel.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="https://ell.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="https://anime.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="https://puzzling.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                <li class="-item"><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 26 })">
+                        <strong>
+                            more (33)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="https://mathoverflow.net/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="https://math.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="https://stats.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="https://physics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="scientists, academics, teachers and students">Chemistry</a></li>
+                <li class="-item"><a href="https://biology.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="https://cs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                            <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="https://meta.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="https://stackapps.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+                <li class="-item"><a href="https://area51.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 0, link: 25 })" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                    </ul>
+    </div>
+                </div>
+            </nav>
+            <div class="site-footer--copyright fs-fine">
+                <ul class="-list">
+                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog/?blb=1">Blog</a></li>
+                    <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link">Facebook</a></li>
+                    <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link">Twitter</a></li>
+                    <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link">LinkedIn</a></li>
+                </ul>
+
+                <p class="mt-auto mb24">
+site design / logo © 2018 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a>
+                            with <a href="https://stackoverflow.blog/2009/06/25/attribution-required/" rel="license">attribution required</a>.
+                    <span id="svnrev">rev&nbsp;2018.3.19.29483</span>
+                </p>
+            </div>
+        </div>
+
+            </footer>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled
+            &lt;img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;
+        &lt;/div&gt;
+    </noscript>
+
+<script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            StackExchange.ready(function () {
+
+                var trackingCodes = [
+                    'UA-5620270-1'
+                ];
+
+                        trackingCodes.push('UA-108242619-1');
+
+                StackExchange.ga.init({
+                    sendTitles: true,
+                    tracker: window.ga,
+                    trackingCodes: trackingCodes
+                });
+
+
+
+                    StackExchange.ga.setDimension('dimension2', '|ruby-on-rails|rspec|rake|ruby-debug|');
+
+                    StackExchange.ga.setDimension('dimension3', 'Questions/Show');
+
+                StackExchange.ga.trackPageView();
+            });
+            
+/**/
+            
+            var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+            (function() {
+                var ssl = 'https:' == document.location.protocol,
+                    s = document.getElementsByTagName('script')[0],
+                    qc = document.createElement('script');
+                 qc.async = true;
+                    qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                    s.parentNode.insertBefore(qc, s);
+                    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+/**/
+                 var sc = document.createElement('script');
+                    sc.async = true;
+                    sc.src = (ssl ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js';
+                    s.parentNode.insertBefore(sc, s);
+                    _comscore.push({ c1: "2", c2: "17440561" });
+            })();
+            
+
+</script>
+        
+    
+    
+<iframe id="google_osd_static_frame_5830985396321" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./Running ruby debug in rspec_ - Stack Overflow_files/saved_resource(2).html"></iframe></body></html>

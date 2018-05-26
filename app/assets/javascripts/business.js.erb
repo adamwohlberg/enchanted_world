@@ -1,0 +1,267 @@
+$(document).ready(function(){
+  // #for long tap prevent Android Chrome copy this image notification
+  window.oncontextmenu = function(event) {
+       event.preventDefault();
+       event.stopPropagation();
+       return false;
+  };
+});
+
+// $(document).ready(function(){
+
+//   $( ".hoverReveal" ).hover(
+//       function() {
+//           $('#tap-to-find-unicorns').hide();
+//           $('#long-tap-to-find-unicorns').show();
+//       }, function() {
+//           $('#tap-to-find-unicorns').show();
+//           $('#long-tap-to-find-unicorns').hide();
+//       }
+//   );
+// });
+
+$(document).ready(function(){
+  $('#start-now-for-free-button').click(function( event ) {
+    event.preventDefault();
+    var left  = ($(window).width()/2)-(900/2),
+        top   = ($(window).height()/2)-(600/2),
+    popup = window.open ("#", "popup", "width=350, height=650, top="+top+", left="+left);
+  });
+});
+
+$(document).ready(function(){
+  $('#lets-get-started-button').click(function( event ) {
+    event.preventDefault();
+    var left  = ($(window).width()/2)-(900/2),
+        top   = ($(window).height()/2)-(600/2),
+    popup = window.open ("#", "popup", "width=350, height=650, top="+top+", left="+left);
+  });
+});
+
+$(document).ready(function(){
+  $('#lets-get-started-button-two').click(function( event ) {
+    event.preventDefault();
+    var left  = ($(window).width()/2)-(900/2),
+        top   = ($(window).height()/2)-(600/2),
+    popup = window.open ("#", "popup", "width=350, height=650, top="+top+", left="+left);
+  });
+});
+
+$(document).ready(function(){
+  $('#unicorn').click(function( event ) {
+    event.preventDefault();
+    var left  = ($(window).width()/2)-(900/2),
+        top   = ($(window).height()/2)-(600/2),
+    popup = window.open ("#", "popup", "width=350, height=650, top="+top+", left="+left);
+  });
+});
+
+$(document).ready(function(){
+  $('.app-screenshot').click(function( event ) {
+    event.preventDefault();
+    var left  = ($(window).width()/2)-(900/2),
+        top   = ($(window).height()/2)-(600/2),
+    popup = window.open ("#", "popup", "width=350, height=650, top="+top+", left="+left);
+  });
+});
+
+$( document ).ready(function() {
+  if($('#unicorn-finder-toggle-switch').prop('checked')){
+        $('#on-off').text('off');
+  } else {
+      $('#on-off').text('on');
+  }
+});
+
+$( document ).ready(function() {
+  $('#unicorn-finder-toggle-switch').change(function() {
+    if($('#unicorn-finder-toggle-switch').prop('checked')){
+        $('#on-off').text('off');
+
+        navigator.vibrate([50]); 
+        console.log('vibrate');
+        console.log('checked');
+
+        $.ajax({
+          url: "/settings/on_toggle",
+          method: 'POST',
+        }).done(function(res) {
+          console.log("on toggle tawggle on"+res);
+        });
+
+        var latitude = null
+        var longitude = null
+
+        function success(pos) {
+          var crd = pos.coords;
+          console.log('Your current position is:');
+          console.log('Latitude : ${crd.latitude}');
+          console.log('Longitude: ${crd.longitude}');
+          console.log('More or less ${crd.accuracy} meters.');
+          latitude = crd.latitude;
+          longitude = crd.longitude;
+
+          navigator.vibrate(370); 
+          console.log('vibrate');
+
+          // # keep sending updated notifications based on the users accurate location every X seconds until the user toggles OFF
+          if (!("Notification" in window)) {
+            alert("This browser does not support desktop notification");
+          }
+
+          else if (Notification.permission === "granted") {
+            var options = { 
+              icon: "<%= image_path('pegasus.png') %>",
+              tag: 'abc',
+              body: "A unicorn is near"
+            }
+            var notification = new Notification("A unicorn is near",options);
+
+            notification.onclick = function () {
+              // # send to detail on yelp
+              window.open("http://stackoverflow.com/a/13328397/1269037");      
+            };
+          
+          }
+
+          else if (Notification.permission !== 'denied') {
+            Notification.requestPermission(function (permission) {
+
+              if(!('permission' in Notification)) {
+                Notification.permission = permission;
+              }
+
+              if (permission === "granted") {
+                var notification = new Notification("Hi there!");
+              }
+            });
+          }
+
+          console.log('vibrating!!! Get updated geolocation now - latitude is '+latitude+' longitude is '+longitude+'. Your nearest unicorn is being sent in a notification message now!');
+
+
+        }; // succcess end
+
+        function error(err) {
+          console.warn('ERROR(${err.code}): ${err.message}');
+        };
+
+        var options = {
+          enableHighAccuracy: true,
+          timeout: 10000000,
+          maximumAge: 5000 // maxiumAge is the time between readings in milliseconds.
+        };
+
+        var id = navigator.geolocation.watchPosition(success, error, options); 
+
+    } else {
+
+      $('#on-off').text('on');
+      navigator.vibrate([50]); 
+      console.log('vibrate');
+      console.log('unchecked');
+
+      $.ajax({
+        url: "/settings/off_toggle",
+        method: 'POST',
+      }).done(function(res) {
+        // // if ( id ) { //only if id is present
+        //   navigator.geolocation.clearWatch(id); 
+          console.log("on toggle tawggle OFF"+ res);
+        // // }
+      });
+
+
+    }
+  });
+});
+
+$( document ).ready(function() {
+  $('#unicorn').mouseover(function(){ 
+    $(this).addClass('selected');
+  });
+});
+
+$( document ).ready(function() {
+  $('#unicorn').mouseout(function(){ 
+    $(this).removeClass('selected');
+  });
+});
+
+$(document).ready(function(){
+
+    var latitude = null
+    var longitude = null
+
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+
+    function success(pos) {
+      var crd = pos.coords;
+
+      console.log('Your current position is:');
+      console.log('Latitude : ${crd.latitude}');
+      console.log('Longitude: ${crd.longitude}');
+      console.log('More or less ${crd.accuracy} meters.');
+      latitude = crd.latitude;
+      longitude = crd.longitude;
+    };
+
+    function error(err) {
+      console.warn('ERROR(${err.code}): ${err.message}');
+    };
+
+    navigator.geolocation.getCurrentPosition(success, error, options);
+    // navigator.geolocation.watchPosition(success, error, options);
+    // how many milliseconds is a long press?
+    var longpress = 250;
+    // holds the start time
+    var start;
+
+    $( "#mobile-unicorn-button" ).on( 'mousedown', function( e ) {
+        e.preventDefault();
+        start = new Date().getTime();
+    } );
+
+    $( "#mobile-unicorn-button" ).on( 'mouseleave', function( e ) {
+        start = 0;
+    } );
+
+    $( "#mobile-unicorn-button" ).on( 'mouseup', function( e ) {
+        if (latitude) {
+        }  else { 
+          latitude = 'localhost';
+        };
+        if (longitude) {
+        }  else { 
+          longitude = 'localhost';
+        };
+
+        if ( new Date().getTime() >= ( start + longpress ) ){
+           console.log('long press! latitude:' + latitude + ' longitude:' + longitude);
+           // alert('long press! latitude:' + latitude + ' longitude:' + longitude);
+          navigator.vibrate([50]);
+          console.log('vibrate');
+           $('#business_search_type').val("long_press");
+           $('#business_latitude').val(latitude);
+           $('#business_longitude').val(longitude);
+           $("#search_form").submit();
+        } else {
+           console.log('short press! latitude:' + latitude + ' longitude:' + longitude);
+           // alert('short press! latitude:' + latitude + ' longitude:' + longitude);
+          navigator.vibrate([50]);
+          console.log('vibrate'); 
+            $('#business_search_type').val("short_press");
+            $('#business_latitude').val(latitude);
+            $('#business_longitude').val(longitude);
+            $("#search_form").submit();
+        }
+    } );
+});
+
+$(document).on('ready page:change', function() {
+  $('input[type="checkbox"].toggle').bootstrapToggle(); // assumes the checkboxes have the class "toggle"
+});

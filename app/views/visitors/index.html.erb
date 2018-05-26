@@ -1,0 +1,324 @@
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Enchanted World™ App Powered by</span></a><%= image_tag('Yelp_trademark_RGB_outline.png', id: 'yelp-logo') %>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <%= link_to 'Settings', settings_path, class: 'nav-link js-scroll-trigger' %>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#what-is-a-unicorn">Unicorn</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead">
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-lg-7 my-auto">
+            <div class="header-content mx-auto">
+              <h1 class="mb-5">Enchanted World is an app that will help you find affordable, four and five star rated businesses near you!</h1>
+            <!--               <a href="#" id="start-now-for-free-button" class="btn btn-outline btn-xl">Start Now for Free!</a> -->
+            <%= link_to 'Start Now for Free!', root_path, id: "start-now-for-free-button", class: "btn btn-outline btn-xl" %>
+            </div>
+          </div>
+          <div class="col-lg-5 my-auto">
+            <div class="device-container">
+              <div class="device-mockup iphone6_plus portrait white">
+                <div class="device">
+                  <div class="screen">
+                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+<!--                     <img src="img/demo-screen-1.jpg" class="img-fluid" alt=""> -->
+                    <%= image_tag 'demo-screen-a.png', class: "img-fluid app-screenshot" %>
+                  </div>
+                  <div class="button">
+                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="download bg-primary text-center" id="download">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <h2 class="section-heading">Discover what all the buzz is about!</h2>
+            <p>Our app is available on any desktop computer or mobile device using Google Chrome&trade; or other popular internet browsers! No need to download anything from the app store - you can get started right now!</p>
+            <%= link_to "Let's Get Started!", root_path, id: "lets-get-started-button-two", class: "btn btn-outline btn-xl" %>    
+            <div class="badges">
+<!--               <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a> -->
+              <%#= link_to image_tag('google-play-badge.svg', border: 0), '#', {class: 'badge-link'} %>
+<!--               <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a> -->
+              <%#= link_to image_tag('app-store-badge.svg', border: 0), '#', {class: 'badge-link'} %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-heading text-center">
+          <h2>Live in an Enchanted World of Unlimited Unicorns</h2>
+          <p class="text-muted">Check out what you can do with this app!</p>
+          <hr>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 my-auto">
+            <div class="device-container">
+              <div class="device-mockup iphone6_plus portrait white">
+                <div class="device">
+                  <div class="screen">
+                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                 <!--    <img src="img/demo-screen-1.jpg" class="img-fluid" alt=""> -->
+                    <%= image_tag 'demo-screen-a.png', class: 'img-fluid app-screenshot' %>
+                  </div>
+                  <div class="button">
+                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 my-auto">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="feature-item">
+                    <%= fa_icon "check-circle" %>
+                    <h3>Find Unicorns</h3>
+                    <p class="text-muted">Simply tap to find unicorns now near you!</p>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="feature-item">
+                    <%= fa_icon "search" %>
+                    <h3>Unicorn Discovery</h3>
+                    <p class="text-muted">Turn on "Unicorn Discovery" and be notified when a unicorn is near!</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="feature-item">
+                    <%= fa_icon "angellist" %>
+                    <h3>Free to Use</h3>
+                    <p class="text-muted">This app is free to use.</p>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="feature-item">
+                    <%= fa_icon "mobile" %>
+                    <h3>Web App</h3>
+                    <p class="text-muted">This app is available right on the internet - you can download the app icon to your smartphone's home page.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact bg-primary" id="contact" >
+      <div class="container">
+        <h2>We
+          <%= fa_icon "heart" %>
+          Unicorns!</h2>
+      </div>
+    </section>
+
+    <section class="cta" style="padding-left: 50px;">
+      <div class="cta-content">
+        <div class="container">
+          <h2>Stop searching.<br>Start finding unicorns.</h2>
+            <%= link_to "Let's Get Started!", root_path, id: "lets-get-started-button", class: "btn btn-outline btn-xl" %>         
+        </div>
+      </div>
+      <div class="overlay"></div>
+    </section>
+
+    <section class="contact bg-primary" id="contact" >
+      <div class="container">
+        <h2>We
+          <%= fa_icon "heart" %>
+<!--           <i class="fa fa-heart"></i> -->
+          new friends!</h2>
+        <ul class="list-inline list-social">
+          <li class="list-inline-item social-twitter">
+            <a href="#">
+              <%= fa_icon "twitter" %>
+<!--               <i class="fa fa-twitter"></i> -->
+            </a>
+          </li>
+          <li class="list-inline-item social-facebook">
+            <a href="#">
+              <%= fa_icon "facebook" %>
+<!--               <i class="fa fa-facebook"></i> -->
+            </a>
+          </li>
+          <li class="list-inline-item social-google-plus">
+            <a href="#">
+              <%= fa_icon "google-plus" %>
+<!--               <i class="fa fa-google-plus"></i> -->
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!--     # mobile unicorn -->
+    <div id="mobile-form" style="width: 100%; margin-top: -50px;">
+      <h4 id="tap-to-find-unicorns" style="color: white; width: 99%; position: relative;">Tap to find <%= @user.setting.search_type %></h4><br>
+<!--       <h4 id="long-tap-to-find-unicorns" style="color: white; width: 99%; position: relative;">Long tap to <br>turn on unicorn finder</h4><br> -->
+      <% if @user.setting.search_type == 'unicorn' %>
+        <%= image_tag('pegasus.png', id: 'mobile-unicorn-button', class: 'hoverReveal pulse-button') %>
+      <% elsif @user.setting.search_type == 'luxury' %>
+        <%= image_tag('luxury-example.png', id: 'mobile-unicorn-button', class: 'hoverReveal pulse-button') %>
+      <% elsif @user.setting.search_type == 'cheapo' %>
+        <%= image_tag('cheapo-example.png', id: 'mobile-unicorn-button', class: 'hoverReveal pulse-button') %> 
+      <% elsif @user.setting.search_type == 'poop' %>
+        <%= image_tag('poop-example.png', id: 'mobile-unicorn-button', class: 'hoverReveal pulse-button') %>       
+      <% else %>
+        <%= image_tag('pegasus.png', id: 'mobile-unicorn-button', class: 'hoverReveal pulse-button') %>
+      <% end %>
+    <form id="cell-number-input">
+      <p style="font-size: 14px; color: white;">we'll text you here when a unicorn is nearby:</p>
+      <input style="margin-top: -30px; width: 300px;" type="tel" name="usrtel" placeholder="310.555.1212">
+    </form>
+<!--     <div id="adsense-container">Google Ad here
+    </div> -->
+    </div>
+
+<!--    #the form -->
+  <div class="row">
+    <div class="col col-lg-12">
+      <div style="margin-top: 30px; width: 80%; margin-left: 15%; padding-left:5px;">
+      <%= simple_form_for :business, :url => businesses_path, :method => :post, html: { id: :search_form } do |f| %>
+        <%= f.hidden_field :search_type, label: false, placeholder: 'xyz' %>
+        <%= f.hidden_field :latitude, label: false, placeholder: 'xyz' %>
+        <%= f.hidden_field :longitude, label: false, placeholder: 'xyz' %>        
+        <%= f.hidden_field :category, label: false, placeholder: 'Find: Restaurants' %>
+        <%= f.hidden_field :location, label: false, placeholder: 'Near: Current Location'%> 
+        <%= f.button :submit, 'Find Unicorns', class: "btn btn-lrg btn-success", :style => "display: none;" %>
+      <% end %><br>
+      </div>
+      <%#= render partial: 'businesses/toggle' %>
+    </div>
+  </div>
+
+    <section class="features" id="what-is-a-unicorn">
+      <div class="container">
+        <div class="section-heading text-center">
+          <h2>What is a Unicorn?</h2>
+          <p class="text-muted"><p>A unicorn is a nearby business with a high quality rating (either 4 or 5 stars on Yelp&reg;) and a low price (either a $ or $$ price rating on Yelp&reg;) - it's as simple as that!</P>
+          <p class="text-muted">No need for complex searches. One click and you know you've discovered a unicorn!</P>
+          <hr>
+        </div>
+        <div id="grid-container" style='margin-top: -85px; height: 300px;'>
+        <div class="row main-grid">
+           <div class="col col-lg-2">
+              <div class="starRatings"> 
+                <%= image_tag('yelp_stars/android/drawable-hdpi/large/stars_large_5.png') %>
+                <%= image_tag('yelp_stars/android/drawable-hdpi/large/stars_large_4.png') %>
+                <%= image_tag('yelp_stars/android/drawable-hdpi/large/stars_large_3.png') %>
+                <%= image_tag('yelp_stars/android/drawable-hdpi/large/stars_large_2.png') %>
+                <%= image_tag('yelp_stars/android/drawable-hdpi/large/stars_large_1.png') %>
+             </div>
+           </div>
+           <div class="col col-lg-5 category" id="unicorn">
+            <span><strong>Unicorns Live Here!</strong></span><br>
+            <%= image_tag('unicorn-example.png') %>
+            <span>low price / high quality</span><br>
+          </div>
+           <div class="col col-lg-5 category" id="luxury">
+            <%= image_tag('luxury-example.png') %>
+            <span>high price / high quality</span>
+          </div>
+        </div>
+        <div class="row">
+           <div class="col col-lg-2"></div>
+           <div class="col col-lg-5 category" id="cheapo">
+            <%= image_tag('cheapo-example.png') %>
+            <span>low price / low quality</span>
+          </div>
+           <div class="col col-lg-5 category" id="poop">
+            <%= image_tag('poop-example.png') %>
+            <span>high price / low quality</span>
+          </div>
+        </div>
+        <div class="row" id="dollars-grid-container">
+           <div class="col col-lg-2"></div>
+           <div class="col col-lg-10">
+            <div class="dollarRating">
+                 <div id="fourDollars"><span>$$$$</span></div>
+                 <div id="threeDollars"><span>$$$</span></div>
+                 <div id="twoDollars"><span>$$</span></div>
+                 <div id="oneDollar"><span>$</span></div>
+             </div>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        </div>
+      </div>
+    </section> 
+
+    <section class="contact bg-primary" id="contact" >
+      <div class="container">
+        <h2>We
+          <%= fa_icon "heart" %>
+          progressive web apps!</h2>
+      </div>
+    </section>
+
+
+    <footer>
+      <div class="container">
+        <p>Enchanted World App&trade;. All Rights Reserved.</p>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a href="#">Privacy</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">Terms</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+<!--     script src="vendor/jquery/jquery.min.js" /script>
+    script src="vendor/bootstrap/js/bootstrap.bundle.min.js"> /script> -->
+
+    <!-- Plugin JavaScript -->
+<!--     script src="vendor/jquery-easing/jquery.easing.min.js"> /script> -->
+
+    <!-- Custom scripts for this template -->
+<!--     script src="js/new-age.min.js"> /script> -->
+
+  </body>
+
+</html>

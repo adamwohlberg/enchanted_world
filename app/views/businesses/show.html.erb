@@ -1,0 +1,51 @@
+<div id="listings" class="show">
+
+ <% if @unicorn.present? %>
+  <% unicorn = @unicorn %>
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+      <div class="unicorn unicorn1">
+        <div class="unicorn">
+          <h4 class="unicorn-headline">A UNICORN IS NEAR!</h4>
+          <%= link_to image_tag(unicorn["image_url"], class: 'yelp-image-small'), unicorn["yelp_url"] %><br>
+          <div style="text-align:center; margin-top: -10px;">
+              <strong style="font-size: 18px; text-align: center;"><%= link_to(unicorn["name"], unicorn["yelp_url"]) %></strong>
+          </div>
+          <strong>Distance: </strong> <%= number_with_precision(( unicorn["distance"] ), :precision => 2 ) %> meters<br>
+          <strong>Price: </strong><span style="color:green; font-weight:600;"><%= unicorn["price"] %></span><br>
+          <strong>Rating: </strong>  <%= unicorn["rating"] %> stars<br>
+<!--           <span id="hidden-yelp-id"><%= unicorn["yelp_id"] %></span> -->
+<!--           <div id="google-adsense-ad-container">
+            <%# if Rails.env.development? %>
+              <span>Add will go here</span><br>
+              <%#= link_to image_tag('ad-example1.png'), 'http://www.123rf.com', class: 'ad-placeholder' %>
+            <%# end %>
+          </div> -->
+      </div>
+    </div>
+  </div>
+<% end %>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+</div>
+
+<!--    #the form -->
+  <div class="row">
+    <div class="col col-lg-12">
+      <div style="margin-top: 30px; width: 80%; margin-left: 15%; padding-left:5px;">
+      <%= simple_form_for :business, :url => businesses_path, :method => :post, html: { id: :search_form } do |f| %>
+        <%= f.hidden_field :id, label: false, placeholder: 'xyz' %>
+        <%= f.hidden_field :search_type, label: false, placeholder: 'xyz' %>
+        <%= f.hidden_field :latitude, label: false, placeholder: 'xyz' %>
+        <%= f.hidden_field :longitude, label: false, placeholder: 'xyz' %>        
+        <%= f.hidden_field :category, label: false, placeholder: 'Find: Restaurants' %>
+        <%= f.hidden_field :location, label: false, placeholder: 'Near: Current Location'%> 
+        <%= f.button :submit, 'Find Unicorns', class: "btn btn-lrg btn-success", :style => "display: none;" %>
+      <% end %><br>
+      </div>
+    </div>
+  </div>
+
+
