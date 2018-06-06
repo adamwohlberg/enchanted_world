@@ -21,10 +21,10 @@ gem 'newrelic_rpm'
 gem 'webpush'
 gem 'browser'
 # gem 'turbolinks'
+gem 'select2-rails'
 
 group :development, :test do
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
@@ -39,6 +39,7 @@ group :development do
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
   gem 'spring-commands-rspec'
+  gem 'web-console', '~> 2.0'
 end
 group :development, :test do
   gem 'factory_bot_rails'
