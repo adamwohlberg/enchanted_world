@@ -2,6 +2,8 @@ class BusinessesController < ApplicationController
   
   layout 'business'
 
+  include YelpHelper
+
   def welcome
   end  
 
@@ -26,8 +28,6 @@ class BusinessesController < ApplicationController
     
     # base_uri = 'https://api.yelp.com/v3/autocomplete'
     term = @user.setting.search_term || 'restaurant'
-    limit = '50' #default 20 max 50  
-    open_now = true
 
     if params["business"]["latitude"] == 'localhost' || params["business"]["latitude"].blank?
       latitude = 40.0165447 
@@ -48,21 +48,8 @@ class BusinessesController < ApplicationController
     puts "term: #{term}"
     puts "latitude: #{latitude}"
     puts "longitude: #{longitude}"
-    
-    sort_by = 'distance'
 
-    begin 
-      @api_key = ENV['YELP_API_KEY']
-      response = HTTParty.get("https://api.yelp.com/v3/businesses/search?term=#{term}&sort_by=#{sort_by}&latitude=#{latitude}&longitude=#{longitude}&open_now=#{open_now}&limit=#{limit}", 
-        headers: {
-          "Authorization" => "Bearer #{@api_key}", 
-          "Content-Type" =>  "application/json"
-        }
-      )
-    rescue
-    end
-    
-    businesses = response.parsed_response['businesses']
+    businesses = yelp_search term, latitude, longitude
 
     poop = []
     luxury = []
@@ -93,54 +80,26 @@ class BusinessesController < ApplicationController
         @user = User.create(ip_address: remote_ip)
       end
 
-      search_id = rand.to_s[2..5] 
+      search_id = rand.to_s[2..5]
       if search_type == 'short_press'
         unicorns.each do |unicorn|
-
           # dont make duplicate records for the same user
-          @business = Business.find_by(yelp_id: unicorn['id'], user_id: @user_id)
-          next if @business.present?
-
-          Business.create!(
-            search_id: search_id,
-            yelp_id: unicorn["id"],
-            name: unicorn["name"],
-            yelp_url: unicorn["url"],
-            rating: unicorn["rating"], 
-            price: unicorn["price"],
-            review_count: unicorn["review_count"],
-            image_url: unicorn["image_url"],
-            distance: unicorn["distance"],
-            location: unicorn["location"]["display_address"].first.strip,
-            meta_category: 'unicorn',
-            user_id: @user.id, # relate the business results to a user to we dont have to keep retrieving
-            latitude: unicorn['coordinates']["latitude"],
-            longitude: unicorn['coordinates']["longitude"]
-          )
+          # but update the search_id so it's retrieved in index
+          @business = Business.find_by(yelp_id: unicorn['id'], user_id: @user.id)
+          if @business.present?
+            @business.update!(search_id: search_id)
+          else
+            create_business_from_yelp search_id, unicorn, @user
+          end
         end
       else
-          unicorn = unicorns.first
-          business = Business.find_by(yelp_id: unicorn['id'])
-          if business.nil?
-            Business.create!(
-              search_id: search_id,
-              yelp_id: unicorn["id"],
-              name: unicorn["name"],
-              yelp_url: unicorn["url"],
-              rating: unicorn["rating"], 
-              price: unicorn["price"],
-              review_count: unicorn["review_count"],
-              image_url: unicorn["image_url"],
-              distance: unicorn["distance"],
-              location: unicorn["location"]["display_address"].first.strip,
-              meta_category: 'unicorn',
-              user_id: @user.id,
-              latitude: unicorn['coordinates']["latitude"],
-              longitude: unicorn['coordinates']["longitude"]
-            )
-          else
-            search_id = business.search_id
-          end
+        unicorn = unicorns.first
+        business = Business.find_by(yelp_id: unicorn['id'])
+        if business.nil?
+          create_business_from_yelp search_id, unicorn, @user
+        else
+          search_id = business.search_id
+        end
       end
 
       if search_id.nil?
@@ -177,4 +136,25 @@ class BusinessesController < ApplicationController
     )
   end
 
+
+  private
+
+  def create_business_from_yelp(search_id, unicorn, user)
+    Business.create!(
+      search_id: search_id,
+      yelp_id: unicorn['id'],
+      name: unicorn['name'],
+      yelp_url: unicorn['url'],
+      rating: unicorn['rating'],
+      price: unicorn['price'],
+      review_count: unicorn['review_count'],
+      image_url: unicorn['image_url'],
+      distance: unicorn['distance'],
+      location: unicorn['location']['display_address'].first.strip,
+      meta_category: 'unicorn',
+      user_id: user.id, # relate the business results to a user to we dont have to keep retrieving
+      latitude: unicorn['coordinates']['latitude'],
+      longitude: unicorn['coordinates']['longitude']
+    )
+  end
 end
