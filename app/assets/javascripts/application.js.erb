@@ -11,6 +11,7 @@
 // about supported directives.
 // NOTE Given that Service Worker operates in a separate browser thread, outside the context of your web pages, you don't want to include serviceworker.js script in your application.js. So if you have a line like require_tree . in your application.js file, you'll either need to move your serviceworker.js to another location or replace require_tree with something more explicit.
 //
+
 //= require jquery3
 //= require popper
 //= require jquery_ujs
@@ -18,6 +19,7 @@
 //= require bootstrap
 //= require bootstrap-toggle
 //= require serviceworker-companion
+//= require select2
 //= require_tree .
 
 window.vapidPublicKey = new Uint8Array(<%= Base64.urlsafe_decode64(ENV['VAPID_PUBLIC_KEY']).bytes %>);

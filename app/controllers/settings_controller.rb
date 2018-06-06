@@ -17,9 +17,7 @@ class SettingsController < ApplicationController
       'Discounts' => 'cheapo'
       # ,'Poop' => 'poop'
     }
-
-    @categories = YELP_CATEGORIES
-    # @categories = ['restaurant']
+    @categories = [@setting.search_term].compact
 
   end
 
@@ -29,7 +27,14 @@ class SettingsController < ApplicationController
     # redirect_to settings_path(@setting)
     redirect_to root_path
   end
- 
+
+  def yelp_categories
+    categories = YelpService.get_categories(params[:q]).each_with_object([]) do |category, list|
+      list << { id: category['title'], text: category['title'] }
+    end
+    render json: categories.compact
+  end
+
   private
 
   def setting_params

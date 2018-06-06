@@ -42,28 +42,13 @@ class BusinessesController < ApplicationController
       @longitude = longitude
     end
 
-    #Business.find_by(longitude: @longitude, latitude: @latitude)
-
     puts "search_type: #{search_type}"
     puts "term: #{term}"
     puts "latitude: #{latitude}"
     puts "longitude: #{longitude}"
     
     sort_by = 'distance'
-
-    begin 
-      @api_key = ENV['YELP_API_KEY']
-      response = HTTParty.get("https://api.yelp.com/v3/businesses/search?term=#{term}&sort_by=#{sort_by}&latitude=#{latitude}&longitude=#{longitude}&open_now=#{open_now}&limit=#{limit}", 
-        headers: {
-          "Authorization" => "Bearer #{@api_key}", 
-          "Content-Type" =>  "application/json"
-        }
-      )
-    rescue
-    end
-    
-    businesses = response.parsed_response['businesses']
-
+    businesses = YelpService.get_businesses(term, sort_by, latitude, longitude, open_now, limit)
     poop = []
     luxury = []
     cheapo = []
