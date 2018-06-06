@@ -6,11 +6,11 @@ class BusinessesController < ApplicationController
   end  
 
   def index
-    @unicorns = Business.where(search_id: params["search_id"]).order('distance ASC')
+    @unicorns = Business.filter_by_id(params["search_id"])
   end
 
   def show
-    @unicorn = Business.where(search_id: params["id"]).order('distance ASC').first
+    @unicorn = Business.filter_by_id(params["search_id"]).first
   end
 
   def create
@@ -32,13 +32,12 @@ class BusinessesController < ApplicationController
     if params["business"]["latitude"] == 'localhost' || params["business"]["latitude"].blank?
       latitude = 40.0165447 
     else
-      latitude = params["business"]["latitude"].to_d 
-      @latitude = latitude 
+      @latitude = params["business"]["latitude"].to_d 
     end
     if params["business"]["longitude"] == 'localhost' || params["business"]["longitude"].blank?
       longitude = -105.281686
     else
-      longitude = params["business"]["longitude"].to_d 
+      @longitude = params["business"]["longitude"].to_d 
       @longitude = longitude
     end
 
@@ -98,46 +97,15 @@ class BusinessesController < ApplicationController
         unicorns.each do |unicorn|
 
           # dont make duplicate records for the same user
-          @business = Business.find_by(yelp_id: unicorn['id'], user_id: @user_id)
+          @business = Business.find_by(yelp_id: unicorn['id'], user_id: @user.id)
           next if @business.present?
-
-          Business.create!(
-            search_id: search_id,
-            yelp_id: unicorn["id"],
-            name: unicorn["name"],
-            yelp_url: unicorn["url"],
-            rating: unicorn["rating"], 
-            price: unicorn["price"],
-            review_count: unicorn["review_count"],
-            image_url: unicorn["image_url"],
-            distance: unicorn["distance"],
-            location: unicorn["location"]["display_address"].first.strip,
-            meta_category: 'unicorn',
-            user_id: @user.id, # relate the business results to a user to we dont have to keep retrieving
-            latitude: unicorn['coordinates']["latitude"],
-            longitude: unicorn['coordinates']["longitude"]
-          )
+          create_business(search_id, unicorn)
         end
       else
           unicorn = unicorns.first
           business = Business.find_by(yelp_id: unicorn['id'])
           if business.nil?
-            Business.create!(
-              search_id: search_id,
-              yelp_id: unicorn["id"],
-              name: unicorn["name"],
-              yelp_url: unicorn["url"],
-              rating: unicorn["rating"], 
-              price: unicorn["price"],
-              review_count: unicorn["review_count"],
-              image_url: unicorn["image_url"],
-              distance: unicorn["distance"],
-              location: unicorn["location"]["display_address"].first.strip,
-              meta_category: 'unicorn',
-              user_id: @user.id,
-              latitude: unicorn['coordinates']["latitude"],
-              longitude: unicorn['coordinates']["longitude"]
-            )
+            create_business(search_id, unicorn)
           else
             search_id = business.search_id
           end
@@ -174,6 +142,27 @@ class BusinessesController < ApplicationController
         public_key: ENV['VAPID_PUBLIC_KEY'],
         private_key: ENV['VAPID_PRIVATE_KEY']
       }
+    )
+  end
+
+  private
+
+  def create_business(search_id, unicorn)
+    Business.create!(
+      search_id: search_id,
+      yelp_id: unicorn["id"],
+      name: unicorn["name"],
+      yelp_url: unicorn["url"],
+      rating: unicorn["rating"], 
+      price: unicorn["price"],
+      review_count: unicorn["review_count"],
+      image_url: unicorn["image_url"],
+      distance: unicorn["distance"],
+      location: unicorn["location"]["display_address"].first.strip,
+      meta_category: 'unicorn',
+      user_id: @user.id, # relate the business results to a user to we dont have to keep retrieving
+      latitude: unicorn['coordinates']["latitude"],
+      longitude: unicorn['coordinates']["longitude"]
     )
   end
 
