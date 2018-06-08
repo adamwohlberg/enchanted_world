@@ -1,31 +1,29 @@
 class SettingsController < ApplicationController
 
-  def off_toggle
-    render json: @user.setting.update_attribute(:tawggle_on, false)
-  end
-
-  def on_toggle
-    render json: @user.setting.update_attribute(:tawggle_on, true)
-  end
-
   def index
-    @setting = @user.setting
-
     @choices = {
       'Unicorns' => 'unicorns',
       'Luxury' => 'luxury',
       'Discounts' => 'cheapo'
       # ,'Poop' => 'poop'
     }
-    @categories = [@setting.search_term].compact
-
+    @categories = [@user.search_term].compact
   end
 
   def update
-    @setting = Setting.find(params[:id])
-    @setting.update!(setting_params)
-    # redirect_to settings_path(@setting)
+    setting = Setting.find(params[:id])
+    
+    setting.update!(setting_params)
+    # redirect_to settings_path(setting)
     redirect_to root_path
+  end
+
+  def off_toggle
+    render json: @user.setting.update_attribute(:tawggle_on, false)
+  end
+
+  def on_toggle
+    render json: @user.setting.update_attribute(:tawggle_on, true)
   end
 
   def yelp_categories

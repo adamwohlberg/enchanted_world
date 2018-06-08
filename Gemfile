@@ -9,7 +9,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'simple_form'
 gem 'bootstrap', '~> 4.0.0'
 gem 'high_voltage'
-gem 'pg', '~> 0.18'
+gem 'pg', '~> 0.20.0'
 gem "font-awesome-rails"
 gem "figaro"
 gem 'yelp', '~> 2.1', '>= 2.1.1'

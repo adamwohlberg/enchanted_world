@@ -166,7 +166,7 @@ GEM
     notiffany (0.1.1)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    pg (0.21.0)
+    pg (0.20.0)
     popper_js (1.12.9)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -319,7 +319,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   newrelic_rpm
-  pg (~> 0.18)
+  pg (~> 0.20.0)
   quiet_assets
   rails (= 4.2.0)
   rails_layout
@@ -344,4 +344,4 @@ RUBY VERSION
    ruby 2.3.3p222
 
 BUNDLED WITH
-   1.16.1
+   1.16.2

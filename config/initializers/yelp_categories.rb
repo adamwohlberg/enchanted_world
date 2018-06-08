@@ -17081,8 +17081,5 @@ YELP_CATEGORIES_AS_JSON =
     }
 ]
 
-    @categories = []
-    YELP_CATEGORIES_AS_JSON.each do |obj|
-      @categories << obj[:title]
-    end
-    YELP_CATEGORIES = @categories
+#not using anywhere.. we can remove this.
+YELP_CATEGORIES = YELP_CATEGORIES_AS_JSON.map{|obj| obj[:title] }

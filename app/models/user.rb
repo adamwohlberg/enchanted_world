@@ -2,15 +2,13 @@ class User < ActiveRecord::Base
   has_many :businesses
   has_one :setting
 
-  after_create :create_setting_obj
+  after_create :create_setting
 
-  def create_setting_obj
-    create_setting
-  end
+  delegate :search_term, to: :setting, allow_nil: true
 
-  def tawggle_on?
-    create_setting if self.setting.blank?
-    setting.tawggle_on
+  #removed setting create logic becuase we are having after_create callback.
+  def setting_tawggle_on?
+    setting && setting.tawggle_on ? setting.tawggle_on : false
   end
 
 end

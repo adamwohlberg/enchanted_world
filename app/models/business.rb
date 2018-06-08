@@ -1,4 +1,7 @@
 class Business < ActiveRecord::Base
+
+  DEFAULT_SEARCH_TYPE = 'short_press'
+
   #user is anonymous so we use remote_ip to identify businesses searched for 
   # to avoid making multiple requests to Yelp
   belongs_to :user

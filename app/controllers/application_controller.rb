@@ -6,24 +6,22 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_browser!
 
   private
-    def remote_ip
-      ip = if request.remote_ip == '127.0.0.1' || "::1"
-        # Hard coded remote address
-        '208.184.3.194'
-      else
-        request.remote_ip
-      end
+
+  def remote_ip
+    if request.remote_ip == '127.0.0.1' || "::1"
+      Rails.application.secrets.default_remote_ip_address
+    else
+      request.remote_ip
     end
+  end
 
+  def current_user
+    @user ||= User.where(ip_address: remote_ip).first_or_create
+  end
 
-    def current_user
-      @user ||= User.where(ip_address: remote_ip).first_or_create
+  def authenticate_browser!
+    if browser.safari?
+      redirect_to '/safari'
     end
-
-    def authenticate_browser!
-      if browser.safari?
-        redirect_to '/safari'
-      end
-    end
-
+  end
 end
