@@ -1,9 +1,5 @@
 class BusinessesController < ApplicationController
-  
   layout 'business'
-
-  def welcome
-  end  
 
   def index
     @unicorns = Business.filter_by_id(params["search_id"])
@@ -13,97 +9,43 @@ class BusinessesController < ApplicationController
     @unicorn = Business.filter_by_id(params["search_id"]).first
   end
 
+  # {"utf8"=>"✓", "authenticity_token"=>"03uGC0A17ITKgYxcEMv2h7IwQ2GHdAOEx7CqYFydnxH8ZCabaYSnvWbEstEAK4NpBc6UNXh61stfQap2dBXBMg==", "business"=>{"search_type"=>"", "latitude"=>"", "longitude"=>"", "category"=>"", "location"=>""}, "commit"=>"Find Businesss"}
   def create
     #if you are coming from show just redirect to show
     # dont keep making calls to Yelp, just use the 50 in the db
-    # and get distance with geocoder
-    if params["business"]["id"].present?
-      redirect_to business_path(params["business"]["id"])
-    end
-    # {"utf8"=>"✓", "authenticity_token"=>"03uGC0A17ITKgYxcEMv2h7IwQ2GHdAOEx7CqYFydnxH8ZCabaYSnvWbEstEAK4NpBc6UNXh61stfQap2dBXBMg==", "business"=>{"search_type"=>"", "latitude"=>"", "longitude"=>"", "category"=>"", "location"=>""}, "commit"=>"Find Businesss"}
-    search_type = params["business"]["search_type"] #short_press or #long_press default for testing the button
-    search_type = "short_press" if search_type.blank?
-    
-    # base_uri = 'https://api.yelp.com/v3/autocomplete'
-    term = @user.setting.search_term || 'restaurant'
-    limit = '50' #default 20 max 50  
-    open_now = true
 
-    if params["business"]["latitude"] == 'localhost' || params["business"]["latitude"].blank?
-      latitude = 40.0165447 
-    else
-      @latitude = params["business"]["latitude"].to_d 
-    end
-    if params["business"]["longitude"] == 'localhost' || params["business"]["longitude"].blank?
-      longitude = -105.281686
-    else
-      @longitude = params["business"]["longitude"].to_d 
-      @longitude = longitude
-    end
+    # one_or_two_dollars = ['$','$$']
+    # three_or_four_dollars = ['$$$','$$$$']
 
-    puts "search_type: #{search_type}"
-    puts "term: #{term}"
-    puts "latitude: #{latitude}"
-    puts "longitude: #{longitude}"
-    
-    sort_by = 'distance'
-    businesses = YelpService.get_businesses(term, sort_by, latitude, longitude, open_now, limit)
-    poop = []
-    luxury = []
-    cheapo = []
-    unicorns = []
+    # businesses.each do |business|
+    #   # business is a hash
+    #   case
+    #   when one_or_two_dollars.include?(business["price"]) && ( business["rating"] >= 4 )
+    #     unicorns << business
+    #   #below when conditions is not goinig to use we can remove it.
+    #   when one_or_two_dollars.include?(business["price"]) && ( business["rating"] < 3 )
+    #     cheapo << business
+    #   when three_or_four_dollars.include?(business["price"]) && ( business["rating"] >= 4 )
+    #     luxury << business
+    #   when three_or_four_dollars.include?(business["price"]) && ( business["rating"] < 3 )
+    #     poop << business
+    #   end
+    # end
 
-    one_or_two_dollars = ['$','$$']
-    three_or_four_dollars = ['$$$','$$$$']
+    redirect_to business_path(params['business']['id']) if params['business']['id'].present?
 
-    businesses.each do |business|
-      # business is a hash
-      case
-      when one_or_two_dollars.include?(business["price"]) && ( business["rating"] >= 4 )
-        unicorns << business
-      when one_or_two_dollars.include?(business["price"]) && ( business["rating"] < 3 )
-        cheapo << business
-      when three_or_four_dollars.include?(business["price"]) && ( business["rating"] >= 4 )
-        luxury << business
-      when three_or_four_dollars.include?(business["price"]) && ( business["rating"] < 3 )
-        poop << business
-      end
-    end
-
+    unicorns = get_available_unicorns
     if unicorns.present?
-      remote_ip =  remote_ip()
-      @user = User.where(ip_address: remote_ip).first
-      if @user.blank?
-        @user = User.create(ip_address: remote_ip)
-      end
+      #short_press or #long_press default for testing the button
+      search_type = params.dig('business', 'search_type') || Business::DEFAULT_SEARCH_TYPE
+      search_id = rand.to_s[2..5]
 
-      search_id = rand.to_s[2..5] 
-      if search_type == 'short_press'
-        unicorns.each do |unicorn|
-
-          # dont make duplicate records for the same user
-          @business = Business.find_by(yelp_id: unicorn['id'], user_id: @user.id)
-          next if @business.present?
-          create_business(search_id, unicorn)
-        end
-      else
-          unicorn = unicorns.first
-          business = Business.find_by(yelp_id: unicorn['id'])
-          if business.nil?
-            create_business(search_id, unicorn)
-          else
-            search_id = business.search_id
-          end
-      end
-
-      if search_id.nil?
-        flash[:notice] = "There were no results found for your search."
-        return redirect_to root_path
-      end
-
-      if search_type == 'short_press' 
+      if search_type == Business::DEFAULT_SEARCH_TYPE
+        create_unavailable_businesses_for_unicorns(unicorns, search_id)
         redirect_to businesses_path(search_id: search_id)
-      elsif search_type == 'long_press'
+      else
+        business = find_or_create_business_for_unicorn(unicorns.first, search_id)
+        search_id = business.search_id
         redirect_to business_path(search_id)
       end
     else
@@ -132,6 +74,47 @@ class BusinessesController < ApplicationController
 
   private
 
+  def get_available_unicorns
+    businesses = all_business_for_current_user
+    businesses.select(&one_or_two_dollars_business_with_rating_greater_than_four)
+  end
+
+  def all_business_for_current_user
+    # we can make YelpService to accept hash in argument
+    term = current_user.search_term || 'restaurant'
+    limit = '50' #default 20 max 50  
+    open_now = true
+    sort_by = 'distance'
+    YelpService.get_businesses(term, sort_by, get_latitude, get_longitude, open_now, limit)  
+  end
+
+  def get_latitude
+    return 40.0165447 if params["business"]["latitude"] == 'localhost' || params["business"]["latitude"].blank?
+    params["business"]["latitude"].to_d 
+  end
+
+  def get_longitude
+    return -105.281686 if params["business"]["longitude"] == 'localhost' || params["business"]["longitude"].blank?
+    params["business"]["longitude"].to_d 
+  end
+
+  def one_or_two_dollars_business_with_rating_greater_than_four
+    one_or_two_dollars = ['$','$$']
+    Proc.new { |business| one_or_two_dollars.include?(business['price']) && business['rating'] >= 4 }
+  end
+
+  def create_unavailable_businesses_for_unicorns(unicorns, search_id)
+    unicorns.each do |unicorn|
+      next if Business.exists?(yelp_id: unicorn['id'], user_id: current_user.id)
+      create_business(search_id, unicorn)
+    end
+  end
+
+  def find_or_create_business_for_unicorn(unicorn, search_id)
+    business = Business.find_by(yelp_id: unicorn['id'])
+    business || create_business(search_id, unicorn)
+  end
+
   def create_business(search_id, unicorn)
     Business.create!(
       search_id: search_id,
@@ -150,5 +133,4 @@ class BusinessesController < ApplicationController
       longitude: unicorn['coordinates']["longitude"]
     )
   end
-
 end

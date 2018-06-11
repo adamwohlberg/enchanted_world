@@ -15,14 +15,27 @@ class YelpService
           "Content-Type" =>  "application/json"
         }
       )
+    #you are rescue all the exceptions, its bad practice.
+    # if you want to rescue the specify the exceptions.  
     rescue
     end
+  end
+
+  def get_business_options(term, sort_by, latitude, longitude, open_now, limit)
+    { 
+      term: term,
+      sort_by: sort_by,
+      latitude: latitude,
+      longitude: longitude,
+      open_now: open_now,
+      limit: limit
+    }
   end
 
   def self.get_businesses(term, sort_by, latitude, longitude, open_now, limit)
     # latitude = 40.0165447
     # longitude = -105.281686
-    opts = { term: term, sort_by: sort_by, latitude: latitude, longitude: longitude, open_now: open_now, limit: limit }
+    opts = get_business_options(term, sort_by, latitude, longitude, open_now, limit)
     new.connect('search', opts).parsed_response['businesses'] || []
   end
 
@@ -30,6 +43,7 @@ class YelpService
     new.connect('autocomplete', text: text).parsed_response['categories'] || []
   end
 
+  #move to secret.yml or env varailab.
   def base_url
     "https://api.yelp.com/v3/"
   end
